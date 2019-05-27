@@ -3,12 +3,18 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+//use Illuminate\Contracts\Auth\MustVerifyEmail;
+//use Illuminate\Foundation\Auth\User as Authenticatable;
+use Jenssegers\Mongodb\Eloquent\Model as Moloquent;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
+use Illuminate\Contracts\Auth\Authenticatable;
 
-class User extends Authenticatable
+class User extends Moloquent implements Authenticatable
 {
+    use AuthenticableTrait;
     use Notifiable;
+
+    protected $connection = 'mongodb';
 
     /**
      * The attributes that are mass assignable.
