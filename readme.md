@@ -6,8 +6,41 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+## Requerimientos:
+ - Laravel Homestead
+ - Git bash
 
-<b>Instrucciones de creacion</b>
+## Instrucciones para el grupo
+
+ - Abrir Git Bash y ubicarse en la carpeta homestead
+ - Encender la maquina virtual con "$vagrant up"
+ - Conectarse a la maquina con el comando "$vagrant ssh"
+ - Instalar mongodb y php-mongodb en la maquina virtual de homestead mediante los siguientes comandos:
+ ----$sudo apt install mongodb
+ ----$sudo apt install php-mongodb
+ - Modificar el archivo /etc/php/7.2/fpm/php.ini y añadir la linea "extension:mongodb.so"
+ - clonar en repositorio dentro de la carpeta code con el comando:
+ ----$git clone https://github.com/franka107/integrador.git
+ - Como notaste no se subio la carpeta <b>vendor</b> ni <b>.env</b>, para instalar la carpeta vendor deberás ejecutar el siguiente comando dentro de la carpeta "integrador" en la maquina virtual
+ ----$composer install
+ - Para crear el archivo .env deberas crearlo mediante tu editor de codigo y copiar lo que se encuentra en el archivo ".env.example"
+ - Generar la llave de la app Laravel mediante el codigo
+ ----$php artisan key:generate
+ - Crear la base de datos <b>storedb</b>
+ ----$mongo
+ ---->use storedb
+ - crear el usuario tecsup para la base de datos mongodb
+ 
+db.createUser(
+  {
+    user: "tecsup",
+    pwd: "Virtu@l",
+    roles: [ { role: "readWrite", db: "storedb" } ]
+  }
+)
+
+
+
 
 
 ## About Laravel
