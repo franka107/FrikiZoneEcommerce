@@ -9,12 +9,20 @@ class Product extends Moloquent
 {
     protected $fillable = [
 
-        'name',
-        'sku',
-        'description',
-        'price',
-        'img',
         
+        'name',
+        'slug',
+        'description',
+        'extract',
+        'price',
+        'image',
+        'visible'
+
     ];
+
+    public function category()
+    {
+        $this->hasOne('App\Category');
+    }
 
 }

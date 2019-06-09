@@ -14,36 +14,34 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
-
-		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
-		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
-		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
-
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-  <header>
-    <!-- TOP HEADER -->
-    <div id="top-header">
-      <div class="container">
-        <ul class="header-links pull-right">
-          <li><a href="#"><i class="fa fa-dollar"></i> Mi Tarjeta</a></li>
-          <li><a href="#"><i class="fa fa-user-o"></i> Mi cuenta</a></li>
+    <nav style="position: fixed; width: 100%; z-index: 100;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/emblema.png') }}"></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+                <ul  style="width: 100%;" class="navbar-nav ">
+
+                  <input  class="form-control " type="search" placeholder="Search">
+
+                </ul>
+                <ul class="navbar-nav mr-auto">
+                  <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
+
+                </ul>
+
+                    <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav col-md-2 ml-md-auto">
                   @guest
                       <li class="nav-item">
                           <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -53,6 +51,8 @@
                               <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                           </li>
                       @endif
+                      <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
+
                   @else
                       <li class="nav-item dropdown">
                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,83 +71,21 @@
                               </form>
                           </div>
                       </li>
+                      <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
+
                   @endguest
-        </ul>
-      </div>
-    </div>
-    <!-- /TOP HEADER -->
 
-    <!-- MAIN HEADER -->
-    <div id="header">
-      <!-- container -->
-      <div class="container">
-        <!-- row -->
-        <div class="row">
-          <!-- LOGO -->
-          <div class="col-md-3">
-            <div class="header-logo">
-              <a href="{{ url('base') }}" class="logo">
-                <img src="./images/friki.png"width="200" height="100">
-              </a>
-            </div>
-          </div>
-          <!-- /LOGO -->
 
-          <!-- SEARCH BAR -->
-          <div class="col-md-6">
-            <div class="header-search">
-              <form>
-                <select class="input-select">
-                  <option value="0">Categorias</option>
-                  <option value="1">Libros</option>
-                  <option value="1">Ropa</option>
-                </select>
-                <input class="input" placeholder="Busca Aqui">
-                <button class="search-btn">Buscar</button>
-              </form>
-            </div>
-          </div>
-          <!-- /SEARCH BAR -->
-
-          <!-- ACCOUNT -->
-          <div class="col-md-3 clearfix">
-            <div class="header-ctn">
-              <!-- Wishlist -->
-              <div>
-                <a href="#">
-                  <i class="fa fa-heart-o"></i>
-                  <span>Mi lista de deseos</span>
-                </a>
+                </ul>
               </div>
-              <!-- /Wishlist -->
-
-              <!-- Cart -->
-              <div class="dropdown">
-                <a href="#">
-                  <i class="fa fa-shopping-cart"></i>
-                  <span>Mi carrito de compras</span>
-                </a>
-              </div>
-              <!-- /Cart -->
-
-              <!-- Menu Toogle -->
 
             </div>
-          </div>
-          <!-- /ACCOUNT -->
         </div>
-        <!-- row -->
-      </div>
-      <!-- container -->
-    </div>
-    <!-- /MAIN HEADER -->
-  </header>
 
+    </nav>
+    <br><br>
     <main class="py-4">
         @yield('content')
     </main>
-
-
-
 </body>
 </html>

@@ -9,9 +9,17 @@ class Order extends Moloquent
 {
     protected $fillable = [
 
-        //id
-        'user_id',
-        'products', //sku,qty,unit_price,total_price
+     //sku,qty,unit_price,total_price
         
     ];
+
+    public function products()
+    {
+        return $this->embedsMany('App\Product');
+    }
+
+    public function user()
+    {
+        return $this->embedsOne('App\User');
+    }
 }
