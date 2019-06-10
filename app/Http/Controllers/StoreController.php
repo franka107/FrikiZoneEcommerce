@@ -22,4 +22,12 @@ class StoreController extends Controller
 
         return view('store.show', compact('product'));
     }
+    public function carrito()
+    {
+        return view('store.carrito');
+    }
+    public function pedido()
+    {
+        return view('store.pedido');
+    }
 }
