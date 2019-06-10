@@ -26,4 +26,8 @@ class StoreController extends Controller
     {
         return view('store.carrito');
     }
+    public function pedido()
+    {
+        return view('store.pedido');
+    }
 }
