@@ -20,3 +20,5 @@ $factory->define(Order::class, function (Faker $faker) {
        //faker embebido, aun en construccion
     ];
 });
+
+

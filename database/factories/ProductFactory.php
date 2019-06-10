@@ -4,6 +4,7 @@
 
 use App\Product;
 use App\Category;
+use App\Comment;
 use Faker\Generator as Faker;
 
 $factory->define(Product::class, function (Faker $faker) {
@@ -15,16 +16,30 @@ $factory->define(Product::class, function (Faker $faker) {
     {
         $category_ids[] = $category->id;
     }
+
+    //$comments = DB::collection('comments')->get();
+
     return [
         
-        'name' => substr($faker->sentence(2), 0, -1),
-        'slug' => substr($faker->sentence(2), 0, -1),
+        'name' => $x=substr($faker->sentence(1), 0, -1),
+        'slug' => $x,
         'description' => $faker->sentence(20),
         'extract' => $faker->sentence(10),
         'price' => $faker->numberBetween($min = 50, $max = 2000),
         'image'=> $faker->image('public/images', 400, 300, null, false),
         'visible' => $faker->boolean,
-        'category_id' => $faker->randomElement($category_ids)
-        //
+        'category_id' => $faker->randomElement($category_ids),
+        /*'comments' =>[
+           $faker->randomElement($comments),
+        ]
+        */
+        // faker comments en modo de prueba, funcional pero
+        // duplica id del comentario en diferentes productos
+        
     ];
+    
 });
+
+
+
+

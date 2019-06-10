@@ -22,7 +22,18 @@ class Product extends Moloquent
 
     public function category()
     {
-        $this->hasOne('App\Category');
+        return $this->belongsTo('App\Category');
     }
+
+    public function comments()
+    {
+        return $this->embedsMany('App\Comment');
+    }
+
+    public function order_item()
+    {
+        return $this->hasMany('App\Order-item');
+    }
+
 
 }

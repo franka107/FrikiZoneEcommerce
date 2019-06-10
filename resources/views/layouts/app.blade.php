@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  style="position: relative; min-height: 100%;">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +51,7 @@
                               <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                           </li>
                       @endif
-                      <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
+                      <a href="{{ route('cart-show') }}"><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
 
                   @else
                       <li class="nav-item dropdown">
@@ -84,8 +84,19 @@
 
     </nav>
     <br><br>
+
     <main class="py-4">
         @yield('content')
     </main>
+
+  <footer style="position: absolute; bottom: 0; left: 0; width: 100%;">
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <p style="color:white; width: 100%; height: 10px; text-align: center;">Copyright © 2019 X-FORCE. Todos los derechos reservados. </p>
+      </div>
+    </nav>
+  </footer>
+  
 </body>
+
 </html>

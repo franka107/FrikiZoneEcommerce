@@ -9,17 +9,18 @@ class Order extends Moloquent
 {
     protected $fillable = [
 
-     //sku,qty,unit_price,total_price
+     'subtotal',
+     'shipping',
         
     ];
 
-    public function products()
+    public function items()
     {
-        return $this->embedsMany('App\Product');
+        return $this->embedsMany('App\Order_item');
     }
 
     public function user()
     {
-        return $this->embedsOne('App\User');
+        return $this->belongsTo('App\User');
     }
 }

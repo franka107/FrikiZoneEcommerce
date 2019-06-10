@@ -14,8 +14,10 @@ class Category extends Moloquent
         'color',
     ];
 
+ 
     public function products()
     {
-        $this->belongsToMany('App/Product');
+        $this->hasMany('App\Product');
     }
+
 }
