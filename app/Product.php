@@ -9,7 +9,6 @@ class Product extends Moloquent
 {
     protected $fillable = [
 
-        
         'name',
         'slug',
         'description',
