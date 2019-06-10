@@ -28,18 +28,6 @@
               </button>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-                <ul  style="width: 100%;" class="navbar-nav ">
-
-                  <input  class="form-control " type="search" placeholder="Search">
-
-                </ul>
-                <ul class="navbar-nav mr-auto">
-                  <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
-
-                </ul>
-
                     <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav col-md-2 ml-md-auto">
                   @guest
@@ -51,7 +39,6 @@
                               <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                           </li>
                       @endif
-                      <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
 
                   @else
                       <li class="nav-item dropdown">
@@ -72,7 +59,10 @@
                           </div>
                       </li>
                       <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
+
                   @endguest
+
+
                 </ul>
               </div>
 
@@ -84,50 +74,13 @@
     <main class="py-4">
         @yield('content')
     </main>
-      <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <p style="color:white; width: 100%; height: 10px; text-align: center;">Copyright © 2019 X-FORCE. Todos los derechos reservados. </p>
-        </div>
-      </nav>
-    <!--<nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container">
-              <div class="row">
-                  <div >
-                      <h2 class="logo"><a> <img src="{{ asset('images/emblema.png') }}"> </a></h2>
-                  </div>
-                  <div >
-                      <h5>Empieza ahora</h5>
-                      <ul>
-                          <li><a href="#">Casa</a></li>
-                          <li><a href="#">Registrate</a></li>
-                          <li><a href="#">Descargas</a></li>
-                      </ul>
-                  </div>
-                  <div >
-                      <h5>Acerca de</h5>
-                      <ul>
-                          <li><a href="#">Informacion nuestra</a></li>
-                          <li><a href="#">Contactanos</a></li>
-                          <li><a href="#">Opiniones</a></li>
-                      </ul>
-                  </div>
-                  <div>
-                      <h5>Soporte</h5>
-                      <ul>
-                          <li><a href="#">FAQ</a></li>
-                          <li><a href="#">Ayuda</a></li>
-                          <li><a href="#">Foros</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-        </nav>
-        <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container">
-            <p style="color:white; width: 100%; height: 10px; text-align: center;">Copyright © 2019 X-FORCE. Todos los derechos reservados. </p>
-          </div>
-        </nav>-->
+
 </body>
-
-
+<footer style="position: absolute; bottom: 0; left: 0; width: 100%;">
+  <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <p style="color:white; width: 100%; height: 10px; text-align: center;">Copyright © 2019 X-FORCE. Todos los derechos reservados. </p>
+    </div>
+  </nav>
+</footer>
 </html>
