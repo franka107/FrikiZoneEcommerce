@@ -28,20 +28,19 @@
               </button>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
 
+                <ul style="width:  100%;" class="navbar-nav mr-auto">
+                  
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search">
 
-                <ul  style="width: 100%;" class="navbar-nav ">
-
-                  <input  class="form-control " type="search" placeholder="Search">
-
-                </ul>
-                <ul class="navbar-nav mr-auto">
                   <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
-
                 </ul>
-
+                <div style="width: 20%;">
+                  
+                </div>
                     <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav col-md-2 ml-md-auto">
+                <ul class="navbar-nav col-md-2 ml-md-2">
                   @guest
                       <li class="nav-item">
                           <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -50,38 +49,37 @@
                           <li class="nav-item">
                               <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                           </li>
+                          <div style="width: 2%;"></div>
                       @endif
+
                       <a href="{{ route('cart-show') }}"><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
 
+                </ul>
+
                   @else
-                      <li class="nav-item dropdown">
-                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <li>
+                          <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               {{ Auth::user()->name }} <span class="caret"></span>
                           </a>
-
-                          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="{{ route('logout') }}"
-                                 onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
-                                  {{ __('Logout') }}
-                              </a>
-
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                  @csrf
-                              </form>
-                          </div>
-                      </li>
-                      <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
-
-                  @endguest
-
-
-                </ul>
+                        </li>
+                        <li>
+                          <a class="nav-link" href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <div style="width: 15%;">
+                          
+                        </div>
+                        <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
               </div>
 
-            </div>
-        </div>
-
+                  @endguest
+              </div>                      
     </nav>
     <br><br>
 

@@ -20,6 +20,7 @@ $factory->define(Product::class, function (Faker $faker) {
     //$comments = DB::collection('comments')->get();
 
     return [
+
         
         'name' => $x=substr($faker->sentence(1), 0, -1),
         'slug' => $x,
