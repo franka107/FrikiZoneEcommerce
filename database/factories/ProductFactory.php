@@ -15,7 +15,7 @@ $factory->define(Product::class, function (Faker $faker) {
     {
         $category_ids[] = $category->id;
     }
-    return [
+    return [    
         
         'name' => substr($faker->sentence(2), 0, -1),
         'slug' => substr($faker->sentence(2), 0, -1),

@@ -14,6 +14,7 @@
 
 Route::get('/', 'StoreController@index')->name('home');
 
+Route::get('/carrito', 'StoreController@carrito')->name('home');
 
 Auth::routes();
 
