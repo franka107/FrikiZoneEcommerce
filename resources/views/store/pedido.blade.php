@@ -13,13 +13,27 @@
                   </div>
                   <br>
                   <div style="" class="row">
-                    <div class="col-sm-5">
+                    <div class="col-sm-4">
                       <div  class=" text-center card">
                         <div  class=" text-center card-body">
                         	<img  src="{{ asset('images/titan.jpg') }}"  class="img-fluid" />            
                         </div>
                       </div>
                     </div>
+                    <div class="col-sm-4">
+                      <div  class=" text-center card">
+                        <div  class=" text-center card-body">
+                          <img  src="{{ asset('images/titan.jpg') }}"  class="img-fluid" />            
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div  class=" text-center card">
+                        <div  class=" text-center card-body">
+                          <img  src="{{ asset('images/titan.jpg') }}"  class="img-fluid" />            
+                        </div>
+                      </div>
+                    </div>   
                   </div>
                 </div>
                 <div class="container" style="margin-top:5%">
@@ -56,17 +70,21 @@
                     <div class="col-sm-12">
                       <div  class="card">
                         <div  class="card-body">
-                          <input class="form-control" name="email" value="NOMBRE DE LA TARJETA">
-                          <br>
-                          <input class="form-control" name="email" value="NUMERO DE LA TARJETA">
-                          <br>
-                          <input class="form-control" name="email" value="VALIDO HASTA (MM/YY)">
-                          <br>
-                          <input class="form-control" name="email" value="CVV">
-                          <br>
-                          <input class="form-control" name="email" value="NOMBRE DE TELEFONO">
-                          <br>
-                          <input class="form-control" name="email" value="DNI">
+                          <div class="container">
+                            <div class="row">
+                              <input class="col-sm-12 form-control" name="email" value="NOMBRE DE LA TARJETA">
+                              <br><br>
+                              <input class="col-sm-12 form-control" name="email" value="NUMERO DE LA TARJETA">
+                              <br><br>
+                              <input class="col-sm-6 form-control" name="email" value="VALIDO HASTA (MM/YY)">
+                              <br><br>
+                              <input class="col-sm-6 form-control" name="email" value="CVV">
+                              <br><br>
+                              <input class="col-sm-6 form-control" name="email" value="NOMBRE DE TELEFONO">
+                              <br><br>
+                              <input class="col-sm-6 form-control" name="email" value="DNI">
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
