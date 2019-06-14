@@ -18,10 +18,15 @@ use Faker\Generator as Faker;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'lastname' => $faker->lastname,
+        'name' => $n=$faker->name,
+        'lastname' => $l=$faker->lastname,
         'email' => $faker->unique()->safeEmail,
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'user' => $n.$l,
+        'password' => bcrypt('12345678'),
+        'type' => 'user',
+        'active' => $faker->randomElement([0,1]),
+        'address' => $faker->address,
+        // password
        
     ];
 });

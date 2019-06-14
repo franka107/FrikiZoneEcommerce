@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
   <div class="container" style="margin-top:30px">
             <div class="row">
               <div class="col-sm-8">
@@ -11,6 +12,8 @@
                 <div class="container" style="margin-top:5%">
                   <div style="" class="row">
                     @foreach($cart as $item)
+                    <div class="col-sm-12 py-2">
+                      <div class="row">
                     <div class="col-sm-5">
                       <div  class=" text-center card">
                         <div  class=" text-center card-body">
@@ -21,6 +24,22 @@
                     <div  class="col-sm-6 card">
                       <div  class=" card-body">
                           <p>{{ $item->name }}</p>
+                          
+                          <input
+                            type="number"
+                            min="1"
+                            max="100"
+                            value="{{ $item->quantity}}"
+                            id="product_{{ $item->id }}"
+                          >
+                          <a 
+                            href="#" 
+                            class="btn btn-warning btn-update-item"
+                            data-href="{{ route('cart-update', $item->slug)}}"
+                            data-id="{{ $item->id }}"
+                          >Actualizar</a>
+                        
+                          <br>
                           <s>${{ number_format($item->price,2) }}</s> &nbsp -25%
                           <p><strong>${{ number_format($item->price,2) }}</strong></p>
                           <p><strong style="color: red">${{ number_format($item->price,2) }}</strong> &nbsp <img src="{{ asset('images/tarjeta.jpg') }}" width="50px" height="20%" class="img-fluid" /></p>
@@ -31,6 +50,8 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </a>
+                  </div>
+                  </div>
                     @endforeach
                   </div>
                   <br>
@@ -58,13 +79,13 @@
                         <br>
                         <div style="padding-bottom: 4%;" class="row border-bottom">
                           <h6 class="col-sm-5">Total</h6>
-                          <h6 class="col-sm-6 text-right">S/. 120.00</h6>
+                          <h6 class="col-sm-6 text-right">S/.{{number_format($total,2)}}</h6>
                         </div>
                         <br>  
                         <br>
                         <br>
                         <div>
-                          <button class="btn btn-success btn-block">PROCESAR COMPRA</button>
+                          <a href="{{ route('order-detail') }}"><button class="btn btn-success btn-block">PROCESAR COMPRA</button></a>
                         </div>
                       </div>
                       <br><br><br>
@@ -79,4 +100,5 @@
             </div>
           </div>
           <a href="{{ route('home') }}">Regresar</a>
+         
 @endsection
