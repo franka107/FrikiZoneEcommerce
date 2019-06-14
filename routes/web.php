@@ -36,3 +36,7 @@ Route::get('cart/update/{product}/{quantity?}', 'CartController@update')->name('
 
 Route::get('order-detail', 'CartController@orderDetail')->name('order-detail')
                                                         ->middleware('auth');
+
+Route::get('payment', 'PaypalController@postPayment')->name('payment');                                                
+
+Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment.status');

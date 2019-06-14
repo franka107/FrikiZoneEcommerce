@@ -84,6 +84,11 @@
     <br><br>
 
     <main class="py-4">
+
+        @if (\Session::has('message'))
+          @include('store.partials.message')
+        @endif  
+
         @yield('content')
     </main>
 

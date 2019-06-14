@@ -40,9 +40,9 @@
                           >Actualizar</a>
                         
                           <br>
-                          <s>${{ number_format($item->price,2) }}</s> &nbsp -25%
-                          <p><strong>${{ number_format($item->price,2) }}</strong></p>
-                          <p><strong style="color: red">${{ number_format($item->price,2) }}</strong> &nbsp <img src="{{ asset('images/tarjeta.jpg') }}" width="50px" height="20%" class="img-fluid" /></p>
+                          <s>S/.{{ number_format($item->price,2) }}</s> &nbsp -25%
+                          <p><strong>S/.{{ number_format($item->price,2) }}</strong></p>
+                          <p><strong style="color: red">S/.{{ number_format($item->price,2) }}</strong> &nbsp <img src="{{ asset('images/tarjeta.jpg') }}" width="50px" height="20%" class="img-fluid" /></p>
                       </div>
                     </div>
                     <a href="{{ route('cart-delete', $item->slug)}}" >
