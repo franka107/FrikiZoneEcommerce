@@ -32,4 +32,11 @@ Route::get('cart/delete/{product}', 'CartController@delete')->name('cart-delete'
 
 Route::get('cart/trash', 'CartController@trash')->name('cart-trash');
 
-Route::get('cart/update/{product}/quantity', 'CartController@update')->name('cart-update');
+Route::get('cart/update/{product}/{quantity?}', 'CartController@update')->name('cart-update');
+
+Route::get('order-detail', 'CartController@orderDetail')->name('order-detail')
+                                                        ->middleware('auth');
+
+Route::get('payment', 'PaypalController@postPayment')->name('payment');                                                
+
+Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment.status');

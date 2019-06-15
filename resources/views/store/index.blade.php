@@ -16,9 +16,9 @@
                </div>
                <div class="card-header" style="padding: 2%; height:190px;">
                   <p>{{ $product -> name }}</p>
-                  <s>${{ number_format($product -> price,2) }}</s> &nbsp -25%
-                  <p><strong>${{ number_format($product -> price,2) }}</strong></p>
-                  <p><strong style="color: red">${{ number_format($product -> price,2) }}</strong> &nbsp <img src="{{ asset('images/tarjeta.jpg') }}" width="50px" height="20%" class="img-fluid" /></p>
+                  <s>S/.{{ number_format($product -> price,2) }}</s> &nbsp -25%
+                  <p><strong>S/.{{ number_format($product -> price,2) }}</strong></p>
+                  <p><strong style="color: red">S/.{{ number_format($product -> price,2) }}</strong> &nbsp <img src="{{ asset('images/tarjeta.jpg') }}" width="50px" height="20%" class="img-fluid" /></p>
                </div>
             </div>
          </div>

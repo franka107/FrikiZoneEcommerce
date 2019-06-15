@@ -26,7 +26,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'slug' => $x,
         'description' => $faker->sentence(20),
         'extract' => $faker->sentence(10),
-        'price' => $faker->numberBetween($min = 50, $max = 2000),
+        'price' => $faker->numberBetween($min = 1, $max = 100),
         'image'=> $faker->image('public/images', 300, 400, null, false),
         'visible' => $faker->boolean,
         'category_id' => $faker->randomElement($category_ids),

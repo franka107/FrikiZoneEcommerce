@@ -22,7 +22,7 @@ class User extends Moloquent implements Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'lastname', 'email', 'password',
+        'name', 'lastname', 'email', 'user', 'password', 'type' , 'active' ,'address'
     ];
 
     /**

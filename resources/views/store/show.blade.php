@@ -44,9 +44,9 @@
                   <div  class="card">
                     <div class="card-body">
                       <h4><strong>Stock Limitado</strong></h4>
-                      <h5>${{ number_format($product -> price,2) }}</h5>
-                      <h4>${{ number_format($product -> price,2) }}</h4>
-                      <h4>${{ number_format($product -> price,2) }}</h4>
+                      <h5>S/.{{ number_format($product -> price,2) }}</h5>
+                      <h4>S/.{{ number_format($product -> price,2) }}</h4>
+                      <h4>S/.{{ number_format($product -> price,2) }}</h4>
                     </div>
                   </div>
                   <br>

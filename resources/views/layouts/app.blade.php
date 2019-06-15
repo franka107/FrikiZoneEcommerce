@@ -10,8 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}" ></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -75,7 +75,7 @@
                         <div style="width: 15%;">
                           
                         </div>
-                        <a href=""><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
+                        <a href="{{ route('cart-show')}}"><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
               </div>
 
                   @endguest
@@ -84,6 +84,11 @@
     <br><br>
 
     <main class="py-4">
+
+        @if (\Session::has('message'))
+          @include('store.partials.message')
+        @endif  
+
         @yield('content')
     </main>
 

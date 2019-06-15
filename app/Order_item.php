@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model as Moloquent;
 
-class Order_item extends Model
+class Order_item extends Moloquent
 {
     protected $fillable = [
         'price',
