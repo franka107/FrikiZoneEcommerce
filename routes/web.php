@@ -45,7 +45,13 @@ Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment
 
 
 //------------------------Administrador---------------------------//
+
+Route::get('admin/home', function(){
+    return view('admin.home');
+});
+
 Route::resource('admin/category', 'Admin\CategoryController');
+Route::resource('admin/product', 'Admin\ProductController');
 
 
 //---------------------Comments------------------------------//

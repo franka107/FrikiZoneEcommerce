@@ -25,14 +25,18 @@
                     @foreach ($categories as $category)
                     <tr>
                         <th>
-                            <a href="#" class="btn btn-primary">
+                            <a href="{{ route('category.edit', $category->id)}}" class="btn btn-primary">
                                     Editar
                             </a>
                         </th>
                         <th>
-                            <a href="#" class="btn btn-danger">
-                                Eliminar
-                            </a>
+                            <form action="{{ route('category.destroy', $category->id ) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button onClick="return confirm('Eliminar registro?')" class="btn btn-danger" type="submit">
+                                    Eliminar
+                                </button>
+                            </form>
                         </th>
                         <th>{{ $category->name }}</th>
                         <th>{{ $category->description }}</th>

@@ -46,23 +46,46 @@ class CategoryController extends Controller
  
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return $category;
        
     }
 
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.category.edit', compact('category'));
     }
 
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'name'=>'required|unique:categories|max:255',
+            'description'=>'required',
+            'color'=>'required',
+        ]);
+
+        $category = Category::find($id);
+        $category->name =  $request->get('name');
+        $category->description =  $request->get('description');
+        $category->color = $request->get('color');
+        $updated = $category->save();
+
+         
+        $message = $updated ? 'Categoría actualizada correctamente!' : 'La Categoría NO pudo actualizarse!';
+        
+        return redirect()->route('category.index')->with('message', $message);
+
     }
 
 
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $deleted = $category->delete();
+
+        $message = $deleted ? 'Categoría eliminada correctamente!' : 'La Categoría NO pudo eliminarse!';
+        return redirect()->route('category.index')->with('message', $message);
     }
 }

@@ -17,7 +17,7 @@ class Category extends Moloquent
  
     public function products()
     {
-        $this->hasMany('App\Product');
+        return $this->hasMany('App\Product');
     }
 
 }
