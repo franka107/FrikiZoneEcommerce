@@ -19,6 +19,7 @@ use Faker\Generator as Faker;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $n=$faker->name,
+        'img-user'=> $faker->image('public/images', 300, 300, null, false),
         'lastname' => $l=$faker->lastname,
         'email' => $faker->unique()->safeEmail,
         'user' => $n.$l,
