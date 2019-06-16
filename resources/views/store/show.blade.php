@@ -55,6 +55,26 @@
                   <a href=""><button class="btn btn-success btn-block">COMPRAR</button></a>
                 </div>
               </div>
+
+              
+            <form action="{{ action('CommentController@store', ['product_id' => $product->id]) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+              <div>
+                <label for="content">{{ __('addComment') }}</label>
+                <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">{{ __('comment') }}</button>
+            </form>
+            @foreach ($product->comments as $comment)
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h5 class="card-title">{{ $comment->user->name }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ $comment->created_at->toFormattedDateString() }}</h6>
+                  <p class="card-text">{{ $comment->content }}</p>
+                </div>
+              </div>    
+            @endforeach
+
             </div>
           </div>
           <a href="{{ route('home') }}">Regresar</a>

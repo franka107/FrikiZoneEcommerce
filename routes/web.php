@@ -46,3 +46,7 @@ Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment
 
 //------------------------Administrador---------------------------//
 Route::resource('admin/category', 'Admin\CategoryController');
+
+
+//---------------------Comments------------------------------//
+Route::post('comments','CommentController@store');
