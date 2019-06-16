@@ -12,94 +12,86 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}" ></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" ></script>
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <link rel="icon" type="image/png" href="{{ asset('images/totoro.png') }}" />
+
 </head>
 <body>
-    <nav style="position: fixed; width: 100%; z-index: 100;" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/emblema.png') }}"></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-sm bg-dark fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="{{ url('/') }}"><img class="img-fluid" src="{{ asset('images/emblema.png') }}"></a>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
 
-                <ul style="width:  100%;" class="navbar-nav mr-auto">
-                  
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                  <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
-                </ul>
-                <div style="width: 20%;">
-                  
-                </div>
-                    <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav col-md-2 ml-md-2">
-                  @guest
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                      </li>
-                      @if (Route::has('register'))
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                          </li>
-                          <div style="width: 2%;"></div>
-                      @endif
+            <ul class="navbar-nav mr-auto col-md-6 mr-auto">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search">
+              <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
+            </ul>
+              <ul class="navbar-nav">
+              @guest
+              <li class="p-2 text-center" >
+                <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
+              </li>
 
-                      <a href="{{ route('cart-show') }}"><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
+              <li class="p-2 text-center" >
+                <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/user.png') }}">{{ __(' Login') }}</a>
+              </li>
+              @if (Route::has('register'))
+              <li class="p-2 text-center" >
+                <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/login.png') }}">{{ __(' Register') }}</a>
+              </li>
+              @endif
+              <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
+              </ul>
+              @else
+              <li class="p-2 text-center" >
+                <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
+              </li>
+              <li class="p-2 text-center">
+                <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre><img class="img-fluid" src="{{ asset('images/user.png') }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+              </li>
+              <li class="p-2 text-center">
+                <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/logout.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
+              </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+              <li class="p-2 text-center"><a class="nav-link" href="{{ route('cart-show')}}"><img class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
+              @endguest
+          </div>
+      </div>                      
+  </nav>
+  <br><br><br>
+  <main class="py-4">
+      @if (\Session::has('message'))
+        @include('store.partials.message')
+      @endif  
 
-                </ul>
-
-                  @else
-                        <li>
-                          <a id="navbarDropdown" class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                              {{ Auth::user()->name }} <span class="caret"></span>
-                          </a>
-                        </li>
-                        <li>
-                          <a class="nav-link" href="{{ route('logout') }}"
-                             onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                              {{ __('Logout') }}
-                          </a>
-                        </li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        <div style="width: 15%;">
-                          
-                        </div>
-                        <a href="{{ route('cart-show')}}"><img style="filter: hue-rotate(60deg) brightness(500%);" src="{{ asset('images/car.png') }}"></a>
-              </div>
-
-                  @endguest
-              </div>                      
-    </nav>
-    <br><br>
-
-    <main class="py-4">
-
-        @if (\Session::has('message'))
-          @include('store.partials.message')
-        @endif  
-
-        @yield('content')
-    </main>
-
+      @yield('content')
+  </main>
+  <br><br>
   <footer style="position: absolute; bottom: 0; left: 0; width: 100%;">
     <nav  class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
+      <div class="container"> 
         <p style="color:white; width: 100%; height: 10px; text-align: center;">Copyright © 2019 X-FORCE. Todos los derechos reservados. </p>
       </div>
     </nav>
   </footer>
-  
-</body>
-
+</body> 
 </html>

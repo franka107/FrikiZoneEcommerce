@@ -16,6 +16,7 @@ class UsersCollectionSeeder extends Seeder
 
         $data = array([
             'name' => 'Frank',
+            'img-user' => '',
             'lastname' => 'Cary',
             'email' => 'frank.cary@tecsup.edu.pe',
             'user' => 'franka107',
