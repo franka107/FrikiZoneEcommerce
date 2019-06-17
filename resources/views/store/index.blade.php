@@ -54,7 +54,7 @@
       </div>
    </div>
    </div>
-   
+
    <div class="container">
       <br>
       <div class="border-bottom shadow-lg">
@@ -76,12 +76,8 @@
                </div>
             </div>
          </div>
-         
+
       @endforeach
       </div>
    </div>
 @endsection
-
-
-   
-
