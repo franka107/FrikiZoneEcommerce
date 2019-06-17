@@ -12,21 +12,21 @@
         <div class="row">
             
             <div class="col-md-6">
-                <div class="panel">
+                <div class="">
                     <i class="fa fa-list-alt icon-home"></i>
                     <a href="{{ route('category.index') }}" class="btn btn-warning btn-block btn-home-admin">CATEGORÍAS</a>
                 </div>
             </div>
             
             <div class="col-md-6">
-                <div class="panel">
+                <div class="">
                     <i class="fa fa-shopping-cart  icon-home"></i>
                     <a href=" route('admin.product.index') }}" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
                 </div>
             </div>
                     
         </div>
-        
+        <br><br> 
         <div class="row">
             
             <div class="col-md-6">

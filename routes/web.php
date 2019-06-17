@@ -50,6 +50,12 @@ Route::get('admin/home', function(){
     return view('admin.home');
 });
 
+Route::get('user/edit', function(){
+    return view('auth.edit');
+});
+Route::get('user/edit-pass', function(){
+    return view('auth.edit-pass');
+});
 Route::resource('admin/category', 'Admin\CategoryController');
 Route::resource('admin/product', 'Admin\ProductController');
 
