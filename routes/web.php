@@ -53,6 +53,6 @@ Route::get('admin/home', function(){
 Route::resource('admin/category', 'Admin\CategoryController');
 Route::resource('admin/product', 'Admin\ProductController');
 
-
+Route::resource('admin/user', 'Admin\UserController');
 //---------------------Comments------------------------------//
 Route::post('comments','CommentController@store');

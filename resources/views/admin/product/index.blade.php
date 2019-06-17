@@ -61,7 +61,7 @@
             <hr>
             
            
-                <!-- echo $products->render(); -->
+                <?php echo $products->render(); ?>
      
             
 
