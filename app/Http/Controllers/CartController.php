@@ -18,6 +18,8 @@ class CartController extends Controller
 
     public function show()
     {
+        //$user= \Auth::id();
+        //dd($user);
         $cart = \Session::get('cart');
         $total = $this->total();
         return view('store.cart', compact('cart', 'total'));

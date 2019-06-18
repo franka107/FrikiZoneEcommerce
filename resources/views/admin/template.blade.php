@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  style="position: relative; min-height: 100%;">
 <head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -10,75 +10,64 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}" ></script>
+    <script src="{{ asset('admin/js/main.js') }}" ></script>
+  
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" ></script>
+
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <link rel="icon" type="image/png" href="{{ asset('images/totoro.png') }}" />
 </head>
-<body>
-    <nav style="position: fixed; width: 100%; z-index: 100;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body style="background-color: #D0F3DF;">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-sm bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/dashboard.png') }}" width="9%"></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/emblema.png') }}"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
               </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
+                <ul class="navbar-nav">
+                <li class="p-2 " >
+                    <a class="nav-link" href="{{ url('/admin/home') }}"><img class="img-fluid" src="{{ asset('images/icon/dashboard.png') }}" width="30px">{{ __(' Dashboard') }}</a>
+                  
+                </li>
+                <li class="p-2 " >
+                  <a class="nav-link" href="{{ route('category.index') }}"><img class="img-fluid" src="{{ asset('images/cat nav.png') }}">{{ __(' Categorias') }}</a>
+                </li>
 
-                    <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav col-md-3 ml-md-3">
-                  @guest
-
-
-
-                    <li class="nav-item">
-                          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    
+                <li class="p-2 " >
+                  <a class="nav-link" href="{{ route('product.index') }}"><img class="img-fluid" src="{{ asset('images/car nav.png') }}">{{ __(' Productos') }}</a>
+                </li>
+                <li class="p-2 " >
+                  <a class="nav-link" href="{{ route('order.index') }}"><img class="img-fluid" src="{{ asset('images/paypal nav.png') }}">{{ __(' Pedidos') }}</a>
+                </li>
+                <li class="p-2" ><a class="nav-link" href="{{ route('user.index') }}"><img  class="img-fluid" src="{{ asset('images/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
+                <li class="p-2 ">
+                  <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/logout.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
                 </ul>
-
-                  @else
-                  <li class="nav-item">
-                        <a class="nav-link" href="#">Categorias</a>
-                    </li>
-
-                    <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
-                    </li>
-
-                    <li class="nav-item">
-                            <a class="nav-link" href="#">Pedidos</a>
-                    </li>
-
-                    <li class="nav-item">
-                            <a class="nav-link" href="#">Usuarios</a>
-                    </li>
-                 
-                    <li>
-                        <a class="nav-link" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                    </li>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    <div style="width: 15%;">
-                        
-                    </div>
-                        
-              </div>
-
-                  @endguest
-              </div>                      
+            </div>
+        </div>
     </nav>
     <br><br>
-
+    <br><br>
     <main class="py-4">
 
         @if (\Session::has('message'))

@@ -14,7 +14,7 @@ class Order extends Moloquent
         
     ];
 
-    public function items()
+    public function order_items()
     {
         return $this->embedsMany('App\Order_item');
     }

@@ -54,7 +54,7 @@ class UserController extends Controller
         $user->lastname     = $request->get('lastname');
         $user->email         = $request->get('email');
         $user->user          = $request->get('user');
-        $user->password      = $request->get('password');
+        $user->password      = bcrypt($request->get('password'));
         $user->type          = $request->get('type');
         $user->active        = $request->has('active') ? 1 : 0;
         $user->address       = $request->get('address');
@@ -103,8 +103,8 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|max:100',
             'lastname' => 'required|max:100',
-            'email' => 'required|email|unique:users',
-            'user' => 'required|unique:users|min:4|max:20',
+            'email' => 'required',
+            'user' => 'required|min:4|max:20',
             'password' => 'required|min:6',
             'type'   => 'required',
             'address' => 'required|max:255'

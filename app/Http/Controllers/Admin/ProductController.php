@@ -32,7 +32,7 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required|max:40|unique:products',
             'description' => 'required|max:255',
-            'extract' => 'required|max:255',
+            'extract' => 'required|max:60',
             'price' => 'required|numeric',
             'image'   => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'category' => 'required',

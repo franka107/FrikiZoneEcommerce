@@ -23,10 +23,10 @@ $factory->define(Product::class, function (Faker $faker) {
 
         
         'name' => substr($faker->sentence(1), 0, -1),
-        'description' => $faker->sentence(20),
-        'extract' => $faker->sentence(10),
+        'description' => $faker->sentence(30),
+        'extract' => $faker->sentence(7),
         'price' => $faker->numberBetween($min = 1, $max = 100),
-        'image'=> $faker->image('public/images', 300, 300, null, false),
+        'image'=> $faker->image('public/images', 400, 300, null, false),
         'visible' => $faker->boolean,
         'category_id' => $faker->randomElement($category_ids),
         /*'comments' =>[
