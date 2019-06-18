@@ -93,10 +93,17 @@
 
                   <li class="nav-item dropdown">
                                
+                                
+                                @if ( Auth::user()->image)
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img class="img-fluid" src="{{ asset('images/user.png') }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                  <img class="img-fluid" width="25px" src="{{ asset('images/'.Auth::user()->image) }}">{{ Auth::user()->name }} <span class="caret"></span></a>
                                 </a>
-
+                                @else
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img class="img-fluid"  src="{{ asset('images/user.png') }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                </a>
+                                @endif
+                             
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('EditarInformacion') }}">
                                          <img class="img-fluid" src="{{ asset('images/editN.png') }}">{{ __(' EditProfile') }}
