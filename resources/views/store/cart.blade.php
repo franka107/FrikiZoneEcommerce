@@ -18,7 +18,7 @@
                     <div class="col-sm-3">
                       <div  class=" text-center card">
                         <div  class=" text-center card-body">
-                          <img src="{{ asset('images/'.$item -> image) }}" class="img-fluid" />            
+                          <img src="{{ asset('images/'.$item -> image) }}" class="img-fluid" width="100%"/>            
                         </div>
                       </div>
                     </div>
@@ -34,13 +34,14 @@
                     <div  class="col-sm-3 card">
                       <div  class=" card-body">
                           <input type="number" min="1" max="100" value="{{ $item->quantity}}" id="product_{{ $item->id }}">
-                          <a href="#" class="btn btn-warning btn-update-item" data-href="{{ route('cart-update', $item->slug)}}" data-id="{{ $item->id }}"
-                          >Actualizar</a>
+                          <div class="py-1"></div>
+                          <a href="#" class="btn btn-warning btn-update-item" data-href="{{ route('cart-update', $item->id)}}" data-id="{{ $item->id }}"
+                          >Aceptar</a>
                           
                       </div>
                       
                     </div>
-                    <a href="{{ route('cart-delete', $item->slug)}}" >
+                    <a href="{{ route('cart-delete', $item->id)}}" >
                       <button type="button" class="close col-sm-1" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>

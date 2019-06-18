@@ -50,7 +50,7 @@
                     </div>
                   </div>
                   <br>
-                  <a href="{{ route('cart-add', $product-> slug ) }}"><button class="btn btn-primary btn-block">AGREGAR AL CARRITO</button></a>
+                  <a href="{{ route('cart-add', $product-> id ) }}"><button class="btn btn-primary btn-block">AGREGAR AL CARRITO</button></a>
                   <br>
                   <a href=""><button class="btn btn-success btn-block">COMPRAR</button></a>
                 </div>

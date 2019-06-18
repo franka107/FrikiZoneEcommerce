@@ -22,8 +22,7 @@ $factory->define(Product::class, function (Faker $faker) {
     return [
 
         
-        'name' => $x=substr($faker->sentence(1), 0, -1),
-        'slug' => $x,
+        'name' => substr($faker->sentence(1), 0, -1),
         'description' => $faker->sentence(20),
         'extract' => $faker->sentence(10),
         'price' => $faker->numberBetween($min = 1, $max = 100),
