@@ -43,8 +43,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto col-md-6 mr-auto">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search">
-              <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
+
+
+                <form class="col-12" action="{{ action('StoreController@search') }}" method="get" >
+                  <div class="row">
+                    <div class="row col-10" >
+                        <input name="name" class="form-control mr-sm-2" type="search" placeholder="Search">
+                    </div>
+                    <div class="row col-2">
+                        <button class="btn btn-outline-primary   " type="submit">Search</button>
+                    </div>
+                      
+                  </div>
+                   
+                </form>
+
+              
             </ul>
 
             <ul class="navbar-nav">

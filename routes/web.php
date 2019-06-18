@@ -64,6 +64,7 @@ Route::post('comments','CommentController@store')->middleware('auth');
 
 
 
+
 //------------------------Usuario---------------------------/
 
 Route::get('/user/info', 'UserController@edit')->name('EditarInformacion');
@@ -71,4 +72,9 @@ Route::PATCH('/user', 'UserController@update');
 
 Route::get('/pwd/show', 'UserController@editPwd');
 Route::post('/pwd/update', 'UserController@updatePwd')->name('ActualizarPassword');
+
+//--------------------Barra de busqueda--------------------------/
+
+Route::get('/products/search','StoreController@search')->name('searchProduct');
+
 

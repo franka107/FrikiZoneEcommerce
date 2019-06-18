@@ -31,4 +31,11 @@ class StoreController extends Controller
     {
         return view('store.pedido');
     }
+    public function search(Request $request)
+    {
+        $name =$request->get('name');
+        $products = Product::Where('name', 'like', "%$name%")->get();
+        
+        return view('store.busqueda', compact('products'));
+    }
 }
