@@ -20,15 +20,22 @@ class UserController extends Controller
     	$request->validate([
     		'name' => ['required', 'string', 'max:255'],
     		'lastname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-    	]);
+            'email' => ['required', 'string', 'email', 'max:255'],
+		]);
+		$id = Auth::user()->id; 
+		$user = User::find($id);
 
-    	$id = Auth::user()->id;
-    	$user = User::find($id);
+		if ($request->file('image')) {
+			$img = $request->file('image');
+			$imageName = time().$img->getClientOriginalName();
+			$user->image = $imageName;
+			$request->image->move(public_path('images'), $imageName);
+		} 
+				    	   	
     	$user->name = $request->get('name');
     	$user->lastname = $request->get('lastname');
-    	$user->email = $request->get('email');
-
+		$user->email = $request->get('email');
+		
     	$user->save();
 
     	return redirect()->action('UserController@edit');

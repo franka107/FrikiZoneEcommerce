@@ -3,18 +3,26 @@
 @section('content')
 <br>	
 <div class="container">
-	<form  method="POST" action="{{action('UserController@update')}}">
+	<form  method="POST" action="{{action('UserController@update')}}" enctype="multipart/form-data">
 	@csrf
 	@method('PATCH')
 	<div class="row">
 		<div class="col-md-3 text-center">
 			<div class="round text-center card shadow-lg">
 				<div class=" text-center card-body">
-			  		<img src="{{ asset('images/perfil.png') }}" class="img-fluid" />
+					@if ( Auth::user()->image )
+						<img src="{{ asset('images/'. Auth::user()->image) }}" class="img-fluid" />
+
+					@else
+						<img src="{{ asset('images/perfil.png') }}" class="img-fluid" />
+	
+					@endif
 			  	</div>
 			</div>
 			<br>
-			<button class="btn btn-primary">Cambiar foto de Perfil</button>
+				<label for="image">Imagen:</label>
+                <input type="file" class="btn btn-primary form-control-file" name="image">
+
 		</div>
 		<div class="col-md-7 border-left">
 			<div class="border-bottom">
