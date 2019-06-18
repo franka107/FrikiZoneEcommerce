@@ -25,11 +25,12 @@ class CartController extends Controller
     }
     // Add item
 
-    public function add(Product $product)
+    public function add($id)
     {
+        $product = Product::find($id);
         $cart = \Session::get('cart');
         $product->quantity =1;
-        $cart[$product->slug] = $product;
+        $cart[$product->id] = $product;
         \Session::put('cart', $cart);
 
         return redirect()->route('cart-show');
@@ -39,7 +40,7 @@ class CartController extends Controller
     public function delete(Product $product)
     {
         $cart = \Session::get('cart');
-        unset($cart[$product->slug]);
+        unset($cart[$product->id]);
         \Session::put('cart', $cart);
 
         return redirect()->route('cart-show');
@@ -49,7 +50,7 @@ class CartController extends Controller
     public function update(Product $product, $quantity)
     {
     	$cart = \Session::get('cart');
-    	$cart[$product->slug]->quantity = $quantity;
+    	$cart[$product->id]->quantity = $quantity;
     	\Session::put('cart', $cart);
     	return redirect()->route('cart-show');
     }

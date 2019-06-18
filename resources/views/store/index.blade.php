@@ -66,7 +66,7 @@
          <div class="col-md-3 py-3">
             <div class="card">
                <div class="text-center card-body" >
-                  <a href="{{ route('product-detail', $product -> slug) }}"><img src="{{ asset('images/'.$product -> image) }}"  width="189px" height="100%" class="img-fluid" /></a>
+                  <a href="{{ route('product-detail', $product -> id) }}"><img src="{{ asset('images/'.$product -> image) }}"  width="189px" height="100%" class="img-fluid" /></a>
                </div>
                <div class="card-header" style="padding: 2%; height:190px;">
                   <p>{{ $product -> name }}</p>

@@ -25,6 +25,6 @@ class CommentController extends Controller
         $product =Product::find($request->get('product_id'));
         $product->comments()->save($comment);
 
-        return redirect()->route('product-detail', $product->slug);
+        return redirect()->route('product-detail', $product->id);
     }
 }

@@ -7,8 +7,8 @@
 			<h1>
 				
 				PRODUCTOS 
-				<a href="{ route('product.create') }}" class="btn btn-warning">
-					Producto
+				<a href="{{ route('product.create') }}" class="btn btn-warning">
+					Nuevo producto
 				</a>
 			</h1>
 		</div>
@@ -32,24 +32,25 @@
                         @foreach($products as $product)
                             <tr>
                                 <td>
-                                    <a href="{ route('product.edit', $product->slug) }}" class="btn btn-primary">
+                                    <a href="{{ route('product.edit' , $product->id )}}" class="btn btn-primary">
                                         Editar Producto
                                     </a>
                                 </td>
                                 <td>
-                                    <form action="#">
-        								<input type="hidden" name="_method" value="DELETE">
+                                    <form action="{{route('product.destroy' , $product->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
         								<button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
         									Eliminar
                                         </button>
                                     </form>
         							
                                 </td>
-                                <td><img src="{{ $product->image }}" width="40"></td>
+                                <td><img src="{{ asset('images/'.$product->image) }}" width="40"></td>
                                 <td>{{ $product->name }}</td>
-                                <td>{{ $product->category_id }}</td>
+                                <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->extract }}</td>
-                                <td>${{ number_format($product->price,2) }}</td>
+                                <td>S/.{{ number_format($product->price,2) }}</td>
                                 <td>{{ $product->visible == 1 ? "Si" : "No" }}</td>
                             </tr>
                         @endforeach
@@ -59,7 +60,12 @@
             
             <hr>
             
-            <?php echo $products->render(); ?>
+           
+                <?php echo $products->render(); ?>
+     
+            
+
+            <br>
             
         </div>
 

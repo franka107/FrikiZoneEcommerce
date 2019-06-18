@@ -12,9 +12,9 @@
 */
 
 
-Route::bind('product', function($slug){
-    return App\Product::where('slug', $slug)->first();
-});
+//Route::bind('product', function($slug){
+//    return App\Product::where('slug', $slug)->first();
+//});
 
 Route::get('/', 'StoreController@index')->name('home');
 
@@ -22,7 +22,7 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('product/{slug}', 'StoreController@show')->name('product-detail');
+Route::get('product/{id}', 'StoreController@show')->name('product-detail');
 
 Route::get('cart/show', 'CartController@show')->name('cart-show');
 
@@ -53,7 +53,7 @@ Route::get('admin/home', function(){
 Route::resource('admin/category', 'Admin\CategoryController');
 Route::resource('admin/product', 'Admin\ProductController');
 
-
+Route::resource('admin/user', 'Admin\UserController');
 //---------------------Comments------------------------------//
 Route::post('comments','CommentController@store');
 
