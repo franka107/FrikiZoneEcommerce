@@ -56,3 +56,6 @@ Route::resource('admin/product', 'Admin\ProductController');
 Route::resource('admin/user', 'Admin\UserController');
 //---------------------Comments------------------------------//
 Route::post('comments','CommentController@store');
+
+Route::get('/products/search','StoreController@search')->name('searchProduct');
+

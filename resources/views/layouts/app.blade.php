@@ -41,27 +41,41 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto col-md-6 mr-auto">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search">
-              <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
+
+
+                <form class="col-12" action="{{ action('StoreController@search') }}" method="get" >
+                  <div class="row">
+                    <div class="row col-10" >
+                        <input name="name" class="form-control mr-sm-2" type="search" placeholder="Search">
+                    </div>
+                    <div class="row col-2">
+                        <button class="btn btn-outline-primary   " type="submit">Search</button>
+                    </div>
+                      
+                  </div>
+                   
+                </form>
+
+              
             </ul>
 
             <ul class="navbar-nav">
               @guest
-                <li class="p-2 text-center" >
+                <li class="p-2 " >
                   <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
                 </li>
 
-                <li class="p-2 text-center" >
+                <li class="p-2 " >
                   <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/user.png') }}">{{ __('Login') }}</a>
                 </li>
 
                 @if (Route::has('register'))
-                  <li class="p-2 text-center" >
+                  <li class="p-2 " >
                     <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/login.png') }}">{{ __('Register') }}</a>
                   </li>
 
                 @endif
-                  <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
+                  <li class="p-2 " ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
               @else
                   <li class="nav-item" >
                     <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
