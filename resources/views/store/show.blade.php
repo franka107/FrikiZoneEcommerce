@@ -10,9 +10,9 @@
                 <div class="container" style="margin-top:5%">
                   <div class="row justify-content-center">
                     <div class="col-sm-5">
-                      <div style="height: 100%; width: 105%" class=" text-center card shadow-lg">
+                      <div class=" text-center card shadow-lg">
                         <div class=" text-center card-body">
-                          <img style="width: 100%; height: 100%" src="{{ asset('images/'.$product -> image) }}" class="img-fluid" />
+                          <img src="{{ asset('images/'.$product -> image) }}" class="img-fluid" />
                         </div>
                       </div>
                     </div>
@@ -68,15 +68,10 @@
                   <textarea class="form-control shadow-lg" id="content" name="content" rows="3"></textarea>
                 </div>
                 <br>
-                <div style="max-width: 96%;" class="container">
+                <div class="container">
                   <div class="row">
-                        <div class="col-md-11 text-right">
-                          <button type="submit" class="btn btn-primary">{{ __('cancel') }}</button>
-                        </div>
-                        <div class="col-md-1 text-right">
-                          <button type="submit" class="btn btn-primary">{{ __('comment') }}</button>
-                      </div>
-                    </div>
+                    <button type="submit" class="btn btn-primary">{{ __('comment') }}</button>
+                  </div>
                 </div>
                     </form>
                       @foreach ($product->comments as $comment)
@@ -90,7 +85,6 @@
                       @endforeach
                       <br>
                       <br>
-                <a class="btn btn-primary" href="{{ route('home') }}">Regresar</a>
           </div>
                 
 @endsection

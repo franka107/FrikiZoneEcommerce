@@ -63,6 +63,7 @@ Route::group( ['middleware' => ['auth' => 'admin']], function()
 Route::post('comments','CommentController@store');
 
 
+
 //------------------------Usuario---------------------------/
 
 Route::get('/user/info', 'UserController@edit')->name('EditarInformacion');

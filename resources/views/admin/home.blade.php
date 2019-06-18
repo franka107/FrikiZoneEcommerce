@@ -3,49 +3,72 @@
 @section('content')
 
     <div class="container text-center">
-        <div class="page-header">
-            <h1><i class="fa fa-rocket"></i> MY LARAVEL STORE - DASHBOARD</h1>
+        <div class="row">
+            <div class="col-6">   
+                <img class="img-fluid" src=" {{ asset('images/log.gif') }} ">
+            </div>
+            <div class="col-6"  >
+                <h1 class="font-weight-light">Bienvenido(a) {{ Auth::user()->user }} al Panel de administración de la Friki Zone.</h1>
+                <h5>El mejor sitio para los virgenes</h5>   
+
+            </div>
         </div>
-        
-        <h2>Bienvenido(a) {{ Auth::user()->user }} al Panel de administración de tu tienda en línea.</h2><hr>
-        
+
+        <hr>
+       
         <div class="row">
             
             <div class="col-md-6">
-                <div class="panel">
-                    <i class="fa fa-list-alt icon-home"></i>
-                    <a href="{{ route('category.index') }}" class="btn btn-warning btn-block btn-home-admin">CATEGORÍAS</a>
+                <div class="card text-center">
+                    <div class="card-body">
+                      <img class="img-fluid" src=" {{ asset('images/cat.png') }} ">
+                    </div>
+                    <div class="">   
+                        <a href="{{ route('category.index') }}" class="btn btn-warning btn-block btn-home-admin">CATEGORÍAS</a>
+                    </div>
                 </div>
             </div>
             
             <div class="col-md-6">
-                <div class="panel">
-                    <i class="fa fa-shopping-cart  icon-home"></i>
-                    <a href=" route('admin.product.index') }}" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img class="img-fluid" src=" {{ asset('images/car.png') }} ">
+                    </div>
+                    <div>    
+                        <a href=" route('admin.product.index') }}" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
+                    </div>
                 </div>
             </div>
                     
         </div>
-        
+        <br><br> 
         <div class="row">
             
             <div class="col-md-6">
-                <div class="panel">
-                    <i class="fa fa-cc-paypal  icon-home"></i>
-                    <a href=" route('admin.order.index') }}" class="btn btn-warning btn-block btn-home-admin">PEDIDOS</a>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img class="img-fluid" src=" {{ asset('images/paypal.png') }} ">   
+                    </div>
+                    <div>
+                        <a href=" route('admin.order.index') }}" class="btn btn-warning btn-block btn-home-admin">PEDIDOS</a>
+                    </div>
                 </div>
             </div> 
             
             <div class="col-md-6">
-                <div class="panel">
-                    <i class="fa fa-users  icon-home"></i>
-                    <a href=" route('admin.user.index') }}" class="btn btn-warning btn-block btn-home-admin">USUARIOS</a>
-                </div>
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img class="img-fluid" src=" {{ asset('images/users.png') }} ">
+                    </div>
+                    <div>
+                        <a href=" route('admin.user.index') }}" class="btn btn-warning btn-block btn-home-admin">USUARIOS</a>
+                    </div>
+                </div>      
             </div>
                     
         </div>
         
     </div>
     <hr>
-
+    <br>    <br>
 @stop
