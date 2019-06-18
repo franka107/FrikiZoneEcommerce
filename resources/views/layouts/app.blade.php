@@ -33,8 +33,10 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-sm bg-dark fixed-top">
       <div class="container">
-
+  
+          
           <a class="navbar-brand" href="{{ url('/') }}"><img class="img-fluid" src="{{ asset('images/emblema.png') }}"></a>
+  
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
 
@@ -48,7 +50,7 @@
             <ul class="navbar-nav">
               @guest
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
+                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/dolar.png') }}">Cambio:$3.24</a>
                 </li>
 
                 <li class="p-2 text-center" >
@@ -57,17 +59,26 @@
 
                 @if (Route::has('register'))
                   <li class="p-2 text-center" >
-                    <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/login.png') }}">{{ __('Register') }}</a>
+                    <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/login.png') }}" width="25px">{{ __('Register') }}</a>
                   </li>
 
                 @endif
                   <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
               @else
+              @if ( \Auth::check())
+                @if ( \Auth::user()->type=='admin')
                   <li class="nav-item" >
-                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
+                      <a class="nav-link" href="{{ url('/admin/home') }}"><img class="img-fluid" src="{{ asset('images/icon/dashboard.png') }}" width="30px">{{ __(' Dashboard') }}</a>
+                   
+                  </li>
+                @endif
+              @endif
+                 
+                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">Cambio:$3.24</a>
                   </li>
 
                   <li class="nav-item dropdown">
+                               
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img class="img-fluid" src="{{ asset('images/user.png') }}">{{ Auth::user()->name }} <span class="caret"></span></a>
                                 </a>

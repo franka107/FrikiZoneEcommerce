@@ -35,7 +35,7 @@
                         <img class="img-fluid" src=" {{ asset('images/car.png') }} ">
                     </div>
                     <div>    
-                        <a href=" route('admin.product.index') }}" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
+                        <a href=" {{route('product.index') }}" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         <img class="img-fluid" src=" {{ asset('images/paypal.png') }} ">   
                     </div>
                     <div>
-                        <a href=" route('admin.order.index') }}" class="btn btn-warning btn-block btn-home-admin">PEDIDOS</a>
+                        <a href="{{ route('order.index') }}" class="btn btn-warning btn-block btn-home-admin">PEDIDOS</a>
                     </div>
                 </div>
             </div> 
@@ -61,7 +61,7 @@
                         <img class="img-fluid" src=" {{ asset('images/users.png') }} ">
                     </div>
                     <div>
-                        <a href=" route('admin.user.index') }}" class="btn btn-warning btn-block btn-home-admin">USUARIOS</a>
+                        <a href="{{ route('user.index') }}" class="btn btn-warning btn-block btn-home-admin">USUARIOS</a>
                     </div>
                 </div>      
             </div>

@@ -40,16 +40,20 @@
               </button>
                 <ul class="navbar-nav">
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/cat nav.png') }}">{{ __(' Categorias') }}</a>
+                    <a class="nav-link" href="{{ url('/admin/home') }}"><img class="img-fluid" src="{{ asset('images/icon/dashboard.png') }}" width="30px">{{ __(' Dashboard') }}</a>
+                  
+                </li>
+                <li class="p-2 text-center" >
+                  <a class="nav-link" href="{{ route('category.index') }}"><img class="img-fluid" src="{{ asset('images/cat nav.png') }}">{{ __(' Categorias') }}</a>
                 </li>
 
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/car nav.png') }}">{{ __(' Productos') }}</a>
+                  <a class="nav-link" href="{{ route('product.index') }}"><img class="img-fluid" src="{{ asset('images/car nav.png') }}">{{ __(' Productos') }}</a>
                 </li>
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/paypal nav.png') }}">{{ __(' Pedidos') }}</a>
+                  <a class="nav-link" href="{{ route('order.index') }}"><img class="img-fluid" src="{{ asset('images/paypal nav.png') }}">{{ __(' Pedidos') }}</a>
                 </li>
-                <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
+                <li class="p-2 text-center" ><a class="nav-link" href="{{ route('user.index') }}"><img  class="img-fluid" src="{{ asset('images/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
                 <li class="p-2 text-center">
                   <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/logout.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
                 </li>
