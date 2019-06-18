@@ -33,7 +33,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-sm bg-dark fixed-top">
       <div class="container">
-          <a class="navbar-brand" href="{{ url('/') }}"><img class="img-fluid" src="{{ asset('images/emblema.png') }}"></a>
+      
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
 
@@ -43,22 +43,7 @@
               <input class="form-control mr-sm-2" type="search" placeholder="Search">
               <button class="btn btn-outline-primary  my-2 my-sm-0 " type="submit">Search</button>
             </ul>
-              <ul class="navbar-nav">
-              @guest
-              <li class="p-2 text-center" >
-                <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
-              </li>
-
-              <li class="p-2 text-center" >
-                <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/user.png') }}">{{ __(' Login') }}</a>
-              </li>
-              @if (Route::has('register'))
-              <li class="p-2 text-center" >
-                <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/login.png') }}">{{ __(' Register') }}</a>
-              </li>
-              @endif
-              <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
-              </ul>
+                  
               @else
               <li class="p-2 text-center" >
                 <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
