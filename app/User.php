@@ -52,4 +52,8 @@ class User extends Moloquent implements Authenticatable
     {
         $this->hasMany('App\Order');
     }
+
+    public function isRole(){
+        return $this->type;
+    }
 }

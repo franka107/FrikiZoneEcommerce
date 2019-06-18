@@ -9,6 +9,8 @@ class Order_item extends Moloquent
     protected $fillable = [
         'price',
         'quantity',
+        'name',
+        'image',
 
     ];
 

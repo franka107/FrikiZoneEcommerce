@@ -46,13 +46,22 @@ Route::get('payment/status', 'PaypalController@getPaymentStatus')->name('payment
 
 //------------------------Administrador---------------------------//
 
-Route::get('admin/home', function(){
-    return view('admin.home');
+Route::group( ['middleware' => ['auth' => 'admin']], function()
+{
+    Route::get('admin/home', function(){
+        return view('admin.home');
+    });
+    Route::resource('admin/category', 'Admin\CategoryController');
+    Route::resource('admin/product', 'Admin\ProductController');
+    Route::resource('admin/user', 'Admin\UserController');
+    Route::get('admin/order', 'Admin\OrderController@index')->name('order.index');
+    Route::post('admin/order/get-items', 'Admin\OrderController@getItems')->name('order.getItems');
+    Route::delete('admin/order/{id}', 'Admin\OrderController@destroy')->name('order.destroy');
+
 });
-
-Route::resource('admin/category', 'Admin\CategoryController');
-Route::resource('admin/product', 'Admin\ProductController');
-
-Route::resource('admin/user', 'Admin\UserController');
 //---------------------Comments------------------------------//
 Route::post('comments','CommentController@store');
+
+
+
+//admin/orders/{id}/

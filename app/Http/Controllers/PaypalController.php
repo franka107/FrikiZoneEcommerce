@@ -176,11 +176,17 @@ class PaypalController extends BaseController
 	        $subtotal += $item->price * $item->quantity;
 	    }
 	    
-	    $order = Order::create([
-	        'subtotal' => $subtotal,
-	        'shipping' => 5,
-	        'user_id' => \Auth::user()->id
-	    ]);
+	   // $order = Order::create([
+	   //     'subtotal' => $subtotal,
+	    //    'shipping' => 5,
+	    //    'user_id' => \Auth::id(),
+		//]);
+		
+		$order = new Order();
+		$order->subtotal = $subtotal;
+		$order->shipping = 5;
+		$order->user_id = \Auth::id();
+		$order->save();
 	    
 	    foreach($cart as $item){
 	        $this->saveOrderItem($item, $order->id);
@@ -200,10 +206,12 @@ class PaypalController extends BaseController
         $order_item = new Order_item();
         $order_item->quantity = $item->quantity;
         $order_item->price = $item->price;
-        $order_item->product_id = $item->id;
+		$order_item->product_id = $item->id;
+		$order_item->name = $item->name;
+		$order_item->image = asset('images/'.$item->image);
 
         $order = Order::find($order_id);
-        $order->items()->save($order_item);
+        $order->order_items()->save($order_item);
     }
     
 }
