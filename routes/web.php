@@ -60,7 +60,7 @@ Route::group( ['middleware' => ['auth' => 'admin']], function()
 
 });
 //---------------------Comments------------------------------//
-Route::post('comments','CommentController@store');
+Route::post('comments','CommentController@store')->middleware('auth');
 
 
 

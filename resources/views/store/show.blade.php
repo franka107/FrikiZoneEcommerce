@@ -21,7 +21,7 @@
                         <div class="container" style="margin-top:3%">
                           <div class="card">
                             <div class="card-body">
-                                {{ $product -> description }}
+                                {{ $product -> extract }}
                             </div>
                           </div>
                         </div>
@@ -44,9 +44,9 @@
                   <div  class="card">
                     <div class="card-body">
                       <h4><strong>Stock Limitado</strong></h4>
-                      <h5>S/.{{ number_format($product -> price,2) }}</h5>
-                      <h4>S/.{{ number_format($product -> price,2) }}</h4>
-                      <h4>S/.{{ number_format($product -> price,2) }}</h4>
+                      <h5>Costo : S/.{{ number_format($product -> price,2) }}</h5>
+                      <h5>Envío : S/.0.00</h5>
+                      <h4>Total: S/.{{ number_format($product -> price,2) }}</h4>
                     </div>
                   </div>
                   <br>
@@ -70,7 +70,7 @@
                 <br>
                 <div class="container">
                   <div class="row">
-                    <button type="submit" class="btn btn-primary">{{ __('comment') }}</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                   </div>
                 </div>
                     </form>

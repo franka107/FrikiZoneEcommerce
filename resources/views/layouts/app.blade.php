@@ -48,7 +48,7 @@
             <ul class="navbar-nav">
               @guest
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
+                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/dolar.png') }}">{{ __(' Dolar') }}</a>
                 </li>
 
                 <li class="p-2 text-center" >

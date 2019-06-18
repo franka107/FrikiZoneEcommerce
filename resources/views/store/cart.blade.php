@@ -96,7 +96,8 @@
                 </div>
               </div>
             </div>
+            <a class="btn btn-primary" href="{{ route('home') }}">Regresar</a>
           </div>
-          <a href="{{ route('home') }}">Regresar</a>
+         
          
 @endsection

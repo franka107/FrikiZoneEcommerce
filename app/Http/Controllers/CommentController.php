@@ -9,10 +9,7 @@ use App\Comment;
 
 class CommentController extends Controller
 {
-    public function __contruct()
-    {
-        $this->middleware('auth');
-    }
+
     public function store(Request $request,Product $product)
     {
         $request->validate([
