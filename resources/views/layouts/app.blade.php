@@ -30,7 +30,7 @@
     <link rel="icon" type="image/png" href="{{ asset('images/totoro.png') }}" />
 
 </head>
-<body>
+<body class="">
   <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-sm bg-dark fixed-top">
       <div class="container">
   
@@ -49,21 +49,21 @@
 
             <ul class="navbar-nav">
               @guest
-                <li class="p-2 text-center" >
+                <li class="p-2 " >
                   <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/dolar.png') }}">Cambio:$3.24</a>
                 </li>
 
-                <li class="p-2 text-center" >
+                <li class="p-2 " >
                   <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/user.png') }}">{{ __('Login') }}</a>
                 </li>
 
                 @if (Route::has('register'))
-                  <li class="p-2 text-center" >
+                  <li class="p-2 " >
                     <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/login.png') }}" width="25px">{{ __('Register') }}</a>
                   </li>
 
                 @endif
-                  <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
+                  <li class="p-2 " ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/carrito.png') }}">{{ __(' Carrito') }}</a></li>
               @else
               @if ( \Auth::check())
                 @if ( \Auth::user()->type=='admin')
