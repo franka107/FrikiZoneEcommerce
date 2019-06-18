@@ -57,7 +57,7 @@
 
    <div class="container">
       <br>
-      <div class="border-bottom shadow-lg">
+      <div class="border-bottom">
          <h4 class="font-weight-light">Nuevos libros llegan a nuestras bibliotecas <a class="small" style="color: orange" href="">Ver mas</a></h4>
       </div>
       <br>

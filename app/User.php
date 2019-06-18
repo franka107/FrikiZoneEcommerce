@@ -8,11 +8,15 @@ use Illuminate\Notifications\Notifiable;
 use Jenssegers\Mongodb\Eloquent\Model as Moloquent;
 use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Auth\Passwords\CanResetPassword;
 
-class User extends Moloquent implements Authenticatable
+
+class User extends Moloquent implements Authenticatable, CanResetPasswordContract
 {
     use AuthenticableTrait;
     use Notifiable;
+    use CanResetPassword;
 
     protected $connection = 'mongodb';
 

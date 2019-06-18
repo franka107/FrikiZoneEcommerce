@@ -63,5 +63,11 @@ Route::group( ['middleware' => ['auth' => 'admin']], function()
 Route::post('comments','CommentController@store');
 
 
+//------------------------Usuario---------------------------/
 
-//admin/orders/{id}/
+Route::get('/user/info', 'UserController@edit')->name('EditarInformacion');
+Route::PATCH('/user', 'UserController@update');
+
+Route::get('/pwd/show', 'UserController@editPwd');
+Route::post('/pwd/update', 'UserController@updatePwd')->name('ActualizarPassword');
+
