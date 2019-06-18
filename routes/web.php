@@ -56,3 +56,12 @@ Route::resource('admin/product', 'Admin\ProductController');
 
 //---------------------Comments------------------------------//
 Route::post('comments','CommentController@store');
+
+//------------------------Usuario---------------------------/
+
+Route::get('/user/info', 'UserController@edit')->name('EditarInformacion');
+Route::PATCH('/user', 'UserController@update');
+
+Route::get('/pwd/show', 'UserController@editPwd');
+Route::post('/pwd/update', 'UserController@updatePwd')->name('ActualizarPassword');
+
