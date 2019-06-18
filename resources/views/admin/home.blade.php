@@ -4,12 +4,13 @@
 
     <div class="container text-center">
         <div class="row">
-            <div class="col-6">   
+            <div class="col-md-6">   
                 <img class="img-fluid" src=" {{ asset('images/log.gif') }} ">
             </div>
-            <div class="col-6"  >
+            <div class="col-md-6"  >
                 <h1 class="font-weight-light">Bienvenido(a) {{ Auth::user()->user }} al Panel de administración de la Friki Zone.</h1>
-                <h5>El mejor sitio para los virgenes</h5>   
+                <h5>El mejor sitio para virgenes</h5>
+                <h6 class="small">(Almas puras)</h6>   
 
             </div>
         </div>

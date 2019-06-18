@@ -30,7 +30,7 @@
     <link rel="icon" type="image/png" href="{{ asset('images/totoro.png') }}" />
 
 </head>
-<body>
+<body class="">
   <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-sm bg-dark fixed-top">
       <div class="container">
 
