@@ -64,7 +64,7 @@
             <ul class="navbar-nav">
               @guest
                 <li class="p-2 " >
-                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/dolar.png') }}">Cambio:$3.24</a>
+                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/dolar.png') }}">Cambio:$3.34</a>
                 </li>
 
                 <li class="p-2 " >
@@ -88,7 +88,7 @@
                 @endif
               @endif
                  
-                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">Cambio:$3.24</a>
+                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/dolar.png') }}">Cambio:$3.34</a>
                   </li>
 
                   <li class="nav-item dropdown">
@@ -96,7 +96,7 @@
                                 
                                 @if ( Auth::user()->image)
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  <img class="img-fluid" width="25px" src="{{ asset('images/'.Auth::user()->image) }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                  <img class="img-fluid" width="30px" style="border-radius: 15px" src="{{ asset('images/'.Auth::user()->image) }}">{{ Auth::user()->name }} <span class="caret"></span></a>
                                 </a>
                                 @else
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -66,11 +66,11 @@
         @if ( $product->visible == 1)
         <div class="col-md-3 py-3">
                 <div class="card">
-                        <a href="{{ route('product-detail', $product -> id) }}"><img src="{{ asset('images/'.$product -> image) }}"  class="card-img-top" /></a>
+                        <a href="{{ route('product-detail', $product -> id) }}"><img src="{{ asset('images/'.$product -> image) }}"  class="card-img-top" height="200px" /></a>
     
                    <div class="card-body" style="padding: 5%; height:200px;">
                       <p class="card-title text-center">{{ $product -> name }}</p>
-                      <p><a href="{{ route('product-detail', $product -> id) }}" class="btn btn-primary">Ver más</a></p>
+                      <p><a href="{{ route('product-detail', $product -> id) }}" class="text-center btn btn-outline-primary ">Ver más</a></p>
                       <p><strong style="color: red">S/.{{ number_format($product -> price,2) }}</strong> &nbsp <img src="{{ asset('images/icon/paypal.png') }}" width="50px" height="20%" class="img-fluid" /></p>
                       <p><small>{{ $product -> extract }}</small></p>
                    </div>

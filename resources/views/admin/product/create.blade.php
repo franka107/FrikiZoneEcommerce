@@ -5,15 +5,17 @@
         <div class="page-header">
             <h1>
                 Productos
-                <small>
-                    Agregar Product
-                </small>
             </h1>
+            <small>
+                    Agregar Producto
+            </small>
         </div>
     </div>
+    <br>
 
     <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
             <div class="page">
                 @if (count($errors)>0)
                     @include('admin.partials.errors')
@@ -31,7 +33,7 @@
                     <label for="name">Categoria:</label>
                     <select class="form-control" name="category">
                         @foreach ($categories as $category)
-                            <option>{{  $category->id}}</option>
+                            <option value="{{  $category->id}}">{{  $category->name}}</option>
                         @endforeach
                     </select>
                             
@@ -69,4 +71,6 @@
         </div>
 
     </form>
+    <br>
+    <br>
 @endsection

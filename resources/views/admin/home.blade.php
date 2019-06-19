@@ -8,9 +8,9 @@
                 <img class="img-fluid" src=" {{ asset('images/log.gif') }} ">
             </div>
             <div class="col-md-6"  >
-                <h1 class="font-weight-light">Bienvenido(a) {{ Auth::user()->user }} al Panel de administración de la Friki Zone.</h1>
-                <h5>El mejor sitio para virgenes</h5>
-                <h6 class="small">(Almas puras)</h6>   
+                <h1 class="font-weight-light">Bienvenido(a) {{ Auth::user()->name}} al Panel de administración de la Friki Zone.</h1>
+                <h5>El mejor sitio para fans del anime</h5>
+                <h6 class="small">Pasala bien!</h6>   
 
             </div>
         </div>

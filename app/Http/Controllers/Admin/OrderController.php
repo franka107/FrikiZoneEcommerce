@@ -18,7 +18,7 @@ class OrderController extends Controller
         //dd($request->get('id_pedido'));
         
         
-        $orders = Order::orderBy('id', 'desc')->paginate(5);
+        $orders = Order::all();
         return view('admin.order.index', compact('orders'));
     }
 

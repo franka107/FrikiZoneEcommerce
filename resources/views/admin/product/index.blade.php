@@ -8,7 +8,7 @@
 				
 				PRODUCTOS 
 				<a href="{{ route('product.create') }}" class="btn btn-warning">
-					Nuevo producto
+					+ Producto
 				</a>
 			</h1>
 		</div>
@@ -33,7 +33,7 @@
                             <tr>
                                 <td>
                                     <a href="{{ route('product.edit' , $product->id )}}" class="btn btn-primary">
-                                        Editar Producto
+                                        Editar
                                     </a>
                                 </td>
                                 <td>
@@ -48,7 +48,11 @@
                                 </td>
                                 <td><img src="{{ asset('images/'.$product->image) }}" width="40"></td>
                                 <td>{{ $product->name }}</td>
-                                <td>{{ $product->category->name }}</td>
+                                @if ($product->category)
+                                    <td>{{ $product->category->name }}</td>
+                                @else
+                                    <td><b>------</b></td>
+                                @endif
                                 <td>{{ $product->extract }}</td>
                                 <td>S/.{{ number_format($product->price,2) }}</td>
                                 <td>{{ $product->visible == 1 ? "Si" : "No" }}</td>
@@ -61,7 +65,6 @@
             <hr>
             
            
-                <?php echo $products->render(); ?>
      
             
 

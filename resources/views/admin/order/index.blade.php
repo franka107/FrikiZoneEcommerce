@@ -71,7 +71,6 @@
             </div>
             <hr>
             
-            <?php echo $orders->render(); ?>
             
         </div>
     </div>
