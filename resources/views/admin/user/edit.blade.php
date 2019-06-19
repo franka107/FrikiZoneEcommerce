@@ -5,12 +5,14 @@
         <div class="page-header">
             <h1>
                 Usuarios
-                <small>
+               
+            </h1>
+            <small>
                     Modificar Usuario
                 </small>
-            </h1>
         </div>
     </div>
+<br>
 
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
@@ -29,26 +31,25 @@
         <div class="row">
         <div class="col-sm-4 offset-sm-4">
             <div class="form-group">    
-                <label for="name">Nombre:</label>
-                <input type="text" class="form-control" name="name" value="{{ $user->name }}"/>
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" name="name" placeholder="{{ $user->name }}"/>
             </div>
             <div class="form-group">    
-                <label for="lastname">Apellidos:</label>
-                <input type="text" class="form-control" name="lastname" value="{{ $user->lastname}}"/>
+                <label for="lastname">Apellidos</label>
+                <input type="text" class="form-control" name="lastname" placeholder="{{ $user->lastname}}"/>
             </div>
             <div class="form-group">    
-                <label for="email">Correo:</label>
-                <input type="text" class="form-control" name="email" value="{{ $user->email }}"/>
+                <label for="email">Correo</label>
+                <input type="text" class="form-control" name="email" placeholder="{{ $user->email }}"/>
             </div>
-            <div class="form-group">    
-                <label for="user">Nombre de Usuario:</label>
-                <input type="text" class="form-control" name="user" value="{{ $user->user }}"/>
-            </div>
+
+            <label for="image">Imagen:</label>
+            <input type="file" class="btn btn-primary form-control-file" name="image">
+
     
-            
             <div class="form-group">    
-                <label for="password">Contraseña:</label>
-                <input type="password" class="form-control" name="password"/>
+                <label for="password">Contraseña</label>
+            <input type="password" class="form-control" name="password" />
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="type" id="admin"  value="    admin">
@@ -60,12 +61,12 @@
             </div>
             
             <div class="form-group">    
-                <label for="address">Dirección:</label>
+                <label for="address">Dirección</label>
                 <textarea class="form-control"  name="address"  rows="2">{{ $user->address}}</textarea>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" name="active">
-                <label class="form-check-label" for="active">Activo:</label>
+                <label class="form-check-label" for="active">Activo</label>
             </div>
 
             <button type="submit" class="btn btn-primary-outline">Actualizar Usuario</button>
@@ -74,4 +75,6 @@
         </div>
 
     </form>
+    <br>
+    <br>
 @endsection

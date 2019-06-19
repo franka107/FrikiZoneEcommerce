@@ -6,7 +6,7 @@
             <h1>
                 <i class="fa fa-user"></i> USUARIOS
                 <a href="{{ route('user.create') }}" class="btn btn-warning">
-                    Crear Usuario
+                   + Usuario
                 </a>
             </h1>
         </div>
@@ -21,10 +21,10 @@
                             <th>Eliminar</th>
                             <th>Nombre</th>
                             <th>Apellidos</th>
-                            <th>Usuario</th>
                             <th>Correo</th>
                             <th>Tipo</th>
                             <th>Activo</th>
+                            <th>Foto</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,7 +32,7 @@
                             <tr>
                                 <td>
                                     <a href="{{ route('user.edit', $user->id) }}" class="btn btn-primary">
-                                        Editar Usuario
+                                        Editar
                                     </a>
                                 </td>
                                 <td>
@@ -46,10 +46,14 @@
                                 </td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->lastname }}</td>
-                                <td>{{ $user->user }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->type }}</td>
                                 <td>{{ $user->active == 1 ? "Si" : "No" }}</td>
+                                @if ( $user->image )
+                                    <td><img src="{{ asset('images/'. $user->image) }}" alt="" width="40px"></td>
+                                @else
+                                    <td><img src="{{ asset('images/icon/perfil.png') }}" alt="" width="40px"></td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>
@@ -58,7 +62,7 @@
             
             <hr>
             
-            <?php echo $users->render(); ?>
+         
             
         </div>
     </div>

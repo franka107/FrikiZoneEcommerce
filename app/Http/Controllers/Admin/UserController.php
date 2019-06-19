@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('name')->paginate(5);
+        $users = User::all();
         return view('admin.user.index', compact('users'));
     }
 
@@ -42,7 +42,7 @@ class UserController extends Controller
             'name' => 'required|max:100',
             'lastname' => 'required|max:100',
             'email' => 'required|email|unique:users',
-            'user' => 'required|unique:users|min:4|max:20',
+            'image'   => $request->file('image') ? 'required|image|mimes:jpeg,png,jpg|max:2048' : '',
             'password' => 'required|min:6',
             'type'   => 'required',
             'address' => 'required|max:255'
@@ -50,6 +50,14 @@ class UserController extends Controller
         ]);
 
         $user = new User();
+
+        if ($request->file('image')) {
+            $img = $request->file('image');
+            $imageName = time().$img->getClientOriginalName();
+            $user->image = $imageName;
+            $request->image->move(public_path('images'), $imageName);
+        }
+
         $user->name          = $request->get('name');
         $user->lastname     = $request->get('lastname');
         $user->email         = $request->get('email');
@@ -101,25 +109,32 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|max:100',
-            'lastname' => 'required|max:100',
-            'email' => 'required',
-            'user' => 'required|min:4|max:20',
-            'password' => 'required|min:6',
-            'type'   => 'required',
-            'address' => 'required|max:255'
-            
+            'name' => $request->get('name') ? 'required|max:100' : '',
+            'lastname' => $request->get('lastname') ? 'required|max:100' : '',
+            'email' => $request->get('email') ? 'required|unique:users|email' : '',
+            'password' => $request->get('password') ? 'required|min:6' : '',
+            'type'   => $request->get('type') ? 'required' : '',
+            'address' =>  $request->get('address') ?'required|max:255' : '',
+            'image'   => $request->file('image') ? 'required|image|mimes:jpeg,png,jpg|max:2048' : '',
+
         ]);
 
         $user = User::find($id);
-        $user->name = $request->get('name');
-        $user->lastname     = $request->get('lastname');
-        $user->email        = $request->get('email');
-        $user->user         = $request->get('user');
-        $user->password      = bcrypt($request->get('password'));
-        $user->type          = $request->get('type');
-        $user->active        = $request->has('active') ? 1 : 0;
-        $user->address       = $request->get('address');
+
+        if ($request->file('image')) {
+            $img = $request->file('image');
+            $imageName = time().$img->getClientOriginalName();
+            $user->image = $imageName;
+            $request->image->move(public_path('images'), $imageName);
+        }
+
+        $request->get('name') ? $user->name = $request->get('name') : '';
+        $request->get('lastname') ? $user->lastname = $request->get('lastname') : '';
+        $request->get('email') ? $user->email  = $request->get('email') : '';
+        $request->get('password') ?  $user->password = bcrypt($request->get('password')) : '';
+        $request->get('type') ? $user->type   = $request->get('type') : '';
+        $request->get('active') ? ($user->active        = $request->has('active') ? 1 : 0) :'';
+        $request->get('address') ? $user->address       = $request->get('address') : '';
 
 
         $updated = $user->save();

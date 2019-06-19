@@ -22,7 +22,6 @@ $factory->define(User::class, function (Faker $faker) {
         'img-user'=> $faker->image('public/images', 300, 300, null, false),
         'lastname' => $l=$faker->lastname,
         'email' => $faker->unique()->safeEmail,
-        'user' => $n.$l,
         'password' => bcrypt('12345678'),
         'type' => 'user',
         'active' => $faker->randomElement([0,1]),

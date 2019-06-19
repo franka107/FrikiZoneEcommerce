@@ -15,7 +15,8 @@
     <br>
 
     <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+        <div class="col-md-3"></div>
+        <div class=" col-md-6">
             <div class="page">
                 @if (count($errors)>0)
                     @include('admin.partials.errors')
@@ -41,11 +42,11 @@
                 <label for="email">Correo:</label>
                 <input type="text" class="form-control" name="email"/>
             </div>
-            <div class="form-group">    
-                    <label for="user">Nombre de Usuario:</label>
-                    <input type="text" class="form-control" name="user"/>
-                </div>
-    
+
+            <label for="image">Imagen:</label>
+            <input type="file" class="btn btn-primary form-control-file" name="image">
+
+     
             <div class="form-group">    
                 <label for="password">Contraseña:</label>
                 <input type="password" class="form-control" name="password"/>
@@ -77,4 +78,6 @@
         </div>
 
     </form>
+    <br>
+    <br>
 @endsection

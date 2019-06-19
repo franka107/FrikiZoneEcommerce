@@ -56,7 +56,7 @@
                 </li>
                 <li class="p-2" ><a class="nav-link" href="{{ route('user.index') }}"><img  class="img-fluid" src="{{ asset('images/icon/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
                 <li class="p-2 ">
-                  <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/icon/logout.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
+                  <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/icon/logoutB.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
                 </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf

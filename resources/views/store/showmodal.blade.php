@@ -110,7 +110,7 @@
                     <br>
                     <div class="container">
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6  ">
                          <a href="{{ route('cart-show')}}"> <button class="btn btn-success">Ir al carrito</button></a>
                         </div>
                         <div class="col-md-6 ">
