@@ -13,7 +13,7 @@ $(document).ready(function(){
         var data = {'_token' : token, 'order_id' : id_pedido};
 
         
-        modal_title.html('Detalle del Pedido: ' + id_pedido);
+        modal_title.html('<br>Detalle del Pedido: ' + id_pedido);
         table.html(loading);
 
         //console.log(path);

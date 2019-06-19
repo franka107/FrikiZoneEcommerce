@@ -62,9 +62,9 @@ class PaypalController extends BaseController
 
         $details = new Details();
         $details -> setSubtotal($subtotal)
-                 ->setShipping(5);
+                 ->setShipping(0);
 
-        $total = $subtotal + 5;
+        $total = $subtotal + 0;
 
 		$amount = new Amount();
 		$amount->setCurrency($currency)
@@ -184,7 +184,7 @@ class PaypalController extends BaseController
 		
 		$order = new Order();
 		$order->subtotal = $subtotal;
-		$order->shipping = 5;
+		$order->shipping = 0;
 		$order->user_id = \Auth::id();
 		$order->save();
 	    

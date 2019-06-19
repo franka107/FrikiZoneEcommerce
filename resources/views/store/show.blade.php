@@ -50,9 +50,9 @@
                     </div>
                   </div>
                   <br>
-                  <a href="{{ route('cart-add', $product-> id ) }}"><button class="btn btn-primary btn-block">AGREGAR AL CARRITO</button></a>
+                  <a href="{{ route('cart-add-ready', $product-> id ) }}"><button class="btn btn-primary btn-block"  data-toggle="modal" data-target="#modal1" >AGREGAR AL CARRITO</button></a>
                   <br>
-                  <a href=""><button class="btn btn-success btn-block">COMPRAR</button></a>
+                  <a href="{{ route('cart-add', $product -> id) }}"><button class="btn btn-success btn-block">COMPRAR</button></a>
                 </div>
               </div>
           </div>
@@ -84,7 +84,43 @@
                         </div>    
                       @endforeach
                       <br>
-                      <br>
+                <br>
           </div>
+
+
+          <!---------------------------- Modal --------------------------------------->
+
+          <div class="container">
+            <div class="modal" tabindex="-1" id="modal1">
+              <div class="modal-dialog bg-dark">
+                <div class="modal-content bg-dark">
+                  <div class="modal-body bg-dark text-white">
+                    <button class="close text-white" data-dismiss="modal">&times;</button>
+                    <div class="container bg-dark">
+                      <div class="row">
+                        <div class="col-md-5">
+                          <img class="img-fluid" src="{{ asset('images/aqua.jpg') }}">
+                        </div>
+                        <div class="col-md-7 text-white">
+                          <h4 class="">Este elemento fue agregado exitosamente al carrito</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-6">
+                         <a href="{{ route('cart-show')}}"> <button class="btn btn-success">Ir al carrito</button></a>
+                        </div>
+                        <div class="col-md-6">
+                          <a href="{{ route('home') }}"><button class="btn btn-success">Ir a la Pagina principal</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
                 
 @endsection

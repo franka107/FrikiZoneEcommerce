@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::orderBy('created_at', 'desc')->paginate(5);
+        $products = Product::all();
         
         return view('admin.product.index', compact('products'));
     }
@@ -79,28 +79,33 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|max:40',
-            'description' => 'required|max:255',
-            'extract' => 'required|max:255',
-            'price' => 'required|numeric',
-            'image'   => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'name' =>  $request->get('name') ? 'required|unique:products|max:40' : '',
+            'description' => $request->get('description') ? 'required|max:255' : '',
+            'extract' => $request->get('extract') ? 'required|max:60' : '',
+            'price' => $request->get('price') ? 'required|numeric' : '',
+            'image'   => $request->file('image') ? 'required|image|mimes:jpeg,png,jpg|max:2048' : '',
             'category' => 'required',
         ]);
 
-        
-        $img = $request->file('image');
-        $imageName = time().$img->getClientOriginalName();
-
         $product =  Product::find($id);
-        $product->category_id = $request->get('category'); 
-        $product->name = $request->get('name');
-        $product->extract = $request->get('extract');
-        $product->description = $request->get('description');
-        $product->price = $request->get('price');
-        $product->visible = $request->has('visible') ? 1 : 0;
-        $product->image = $imageName;
 
-        $request->image->move(public_path('images'), $imageName);
+            if ($request->file('image')) {
+                $img = $request->file('image');
+                $imageName = time().$img->getClientOriginalName();
+                $product->image = $imageName;
+                $request->image->move(public_path('images'), $imageName);
+            }
+      
+
+        
+        $request->get('name') ? $product->name = $request->get('name') : '';
+        $request->get('description') ? $product->description = $request->get('description') : '';
+        $request->get('extract') ? $product->extract = $request->get('extract') : '';
+        $request->get('price') ? $product->price = $request->get('price') : '';
+        $product->category_id = $request->get('category'); 
+        $product->visible = $request->has('visible') ? 1 : 0;
+
+        
 
         $updated = $product->save();
         

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
+use App\Product;
 
 class CategoryController extends Controller
 {
@@ -27,13 +28,13 @@ class CategoryController extends Controller
         $request->validate([
             'name'=>'required|unique:categories|max:255',
             'description'=>'required',
-            'color'=>'required',
+           
         ]);
 
         $category = new Category([
             'name' => $request->get('name'),
             'description' => $request->get('description'),
-            'color' => $request->get('color'),
+            
         ]);
 
         $category->save();
@@ -61,15 +62,15 @@ class CategoryController extends Controller
     {
         //
         $request->validate([
-            'name'=>'required|unique:categories|max:255',
-            'description'=>'required',
-            'color'=>'required',
+            'name'=> $request->get('name') ? 'required|unique:categories|max:40': '',
+            'description'=> $request->get('description') ? 'required' : '',
+            
         ]);
 
         $category = Category::find($id);
-        $category->name =  $request->get('name');
-        $category->description =  $request->get('description');
-        $category->color = $request->get('color');
+        $request->get('name') ? $category->name =  $request->get('name') : '';
+        $request->get('description') ? $category->description =  $request->get('description'): '';
+        
         $updated = $category->save();
 
          
@@ -82,7 +83,16 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
+        $products = Product::all();
         $category = Category::find($id);
+
+        foreach ($products as $product) {
+            if ( $product->category_id == $category->id) {
+                $product->category_id = "Sin categoria";
+                $product->save();
+            }
+        }
+        
         $deleted = $category->delete();
 
         $message = $deleted ? 'Categoría eliminada correctamente!' : 'La Categoría NO pudo eliminarse!';

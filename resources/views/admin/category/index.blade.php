@@ -18,18 +18,18 @@
                         <th>Eliminar</th>
                         <th>Nombre</th>
                         <th>Descripcion</th>
-                        <th>Color</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($categories as $category)
                     <tr>
-                        <th>
+                        <td>
                             <a href="{{ route('category.edit', $category->id)}}" class="btn btn-primary">
                                     Editar
                             </a>
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <form action="{{ route('category.destroy', $category->id ) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -37,15 +37,19 @@
                                     Eliminar
                                 </button>
                             </form>
-                        </th>
-                        <th>{{ $category->name }}</th>
-                        <th>{{ $category->description }}</th>
-                        <th>{{ $category->color }}</th>
+                        </td>
+                        <td>{{ $category->name }}</td>
+                        <td>{{ $category->description }}</td>
+                        
                     </tr> 
                     @endforeach
                 
                 </tbody>
             </table>
+            
+
+            <br>
+            <br>
         </div>
     </div>
    

@@ -28,6 +28,8 @@ Route::get('cart/show', 'CartController@show')->name('cart-show');
 
 Route::get('cart/add/{product}', 'CartController@add')->name('cart-add');
 
+Route::get('cart/add/ready/{product}', 'CartController@addReady')->name('cart-add-ready');
+
 Route::get('cart/delete/{product}', 'CartController@delete')->name('cart-delete');
 
 Route::get('cart/trash', 'CartController@trash')->name('cart-trash');
