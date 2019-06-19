@@ -57,6 +57,15 @@ class UserController extends Controller
 
     	return redirect()->action('UserController@edit');
     }
+
+    public function destroy(){
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->action('StoreController@index');
+
+    }
 }
 
 

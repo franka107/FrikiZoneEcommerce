@@ -53,13 +53,16 @@
 			</div>
 	</form>
 			<br>
-			<label for="inputEmail4">Contraseña actual</label>
 			<div class="row">
 				<div class="col">
-					<input class="form-control" type="text" placeholder="**********" readonly>
-				</div>
+				<form action="{{ action('UserController@destroy', Auth::user()->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-outline-danger btn-block" type="submit">Eliminar mi Usuario</button>
+            	</form>
+           		</div>
 				<div class="col">
-					<a class="btn btn-outline-dark btn-block" href="{{ action('UserController@editPwd') }}">Cambiar contraseña</a>
+					<a class="btn btn-outline-dark btn-block" href="{{ action('UserController@editPwd') }}">{{__('Cambiar contraseña')}}</a>
 				</div>
 			</div>
 		</div>
