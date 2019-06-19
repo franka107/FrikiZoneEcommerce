@@ -73,6 +73,8 @@ Route::PATCH('/user', 'UserController@update');
 Route::get('/pwd/show', 'UserController@editPwd');
 Route::post('/pwd/update', 'UserController@updatePwd')->name('ActualizarPassword');
 
+Route::delete('/user/{id}/del', 'UserController@destroy');
+
 //--------------------Barra de busqueda--------------------------/
 
 Route::get('/products/search','StoreController@search')->name('searchProduct');
