@@ -14,7 +14,7 @@
 						<img src="{{ asset('images/'. Auth::user()->image) }}" class="img-fluid" />
 
 					@else
-						<img src="{{ asset('images/perfil.png') }}" class="img-fluid" />
+						<img src="{{ asset('images/icon/perfil.png') }}" class="img-fluid" />
 	
 					@endif
 			  	</div>
@@ -66,5 +66,5 @@
 	</div>
 	
 </div>
-
+<br><br><br><br>
 @endsection

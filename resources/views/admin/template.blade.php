@@ -28,12 +28,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
 
-    <link rel="icon" type="image/png" href="{{ asset('images/totoro.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('images/icon/totoro.png') }}" />
 </head>
 <body style="background-color: #f2f2f2">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-toggleable-sm bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/emblema.png') }}"></a>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('images/icon/emblema.png') }}"></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -45,18 +45,18 @@
                   
                 </li>
                 <li class="p-2 " >
-                  <a class="nav-link" href="{{ route('category.index') }}"><img class="img-fluid" src="{{ asset('images/cat nav.png') }}">{{ __(' Categorias') }}</a>
+                  <a class="nav-link" href="{{ route('category.index') }}"><img class="img-fluid" src="{{ asset('images/icon/cat nav.png') }}">{{ __(' Categorias') }}</a>
                 </li>
 
                 <li class="p-2 " >
-                  <a class="nav-link" href="{{ route('product.index') }}"><img class="img-fluid" src="{{ asset('images/car nav.png') }}">{{ __(' Productos') }}</a>
+                  <a class="nav-link" href="{{ route('product.index') }}"><img class="img-fluid" src="{{ asset('images/icon/car nav.png') }}">{{ __(' Productos') }}</a>
                 </li>
                 <li class="p-2 " >
-                  <a class="nav-link" href="{{ route('order.index') }}"><img class="img-fluid" src="{{ asset('images/paypal nav.png') }}">{{ __(' Pedidos') }}</a>
+                  <a class="nav-link" href="{{ route('order.index') }}"><img class="img-fluid" src="{{ asset('images/icon/paypal nav.png') }}">{{ __(' Pedidos') }}</a>
                 </li>
-                <li class="p-2" ><a class="nav-link" href="{{ route('user.index') }}"><img  class="img-fluid" src="{{ asset('images/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
+                <li class="p-2" ><a class="nav-link" href="{{ route('user.index') }}"><img  class="img-fluid" src="{{ asset('images/icon/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
                 <li class="p-2 ">
-                  <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/logout.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
+                  <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/icon/logout.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
                 </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
