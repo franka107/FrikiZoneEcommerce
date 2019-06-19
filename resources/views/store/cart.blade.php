@@ -11,46 +11,39 @@
                 @if(count($cart))
                 @foreach($cart as $item)
                 <div class="container" style="margin-top:5%">
-                  <div style="" class="row">
-                    
-                    <div class="col-md-12">
-                      <div class="row">
-                    <div class="col-md-4 card">
-                        <div  class=" text-center card-body">
-                          <img src="{{ asset('images/'.$item -> image) }}" class="img-fluid" width="100%"/>            
-                        </div>
-                    </div>
-                    <div  class="col-md-4 card">
-                      <div  class=" card-body">
-                          <p>{{ $item->name }}</p>                       
-                          <br>
-                          <s>S/.{{ number_format($item->price,2) }}</s> &nbsp -25%
-                          <p><strong>S/.{{ number_format($item->price,2) }}</strong></p>
-                          <p><strong style="color: red">S/.{{ number_format($item->price,2) }}</strong> &nbsp <img src="{{ asset('images/tarjeta.jpg') }}" width="50px" height="20%" class="img-fluid" /></p>
-                      </div>
-                    </div>  
-                    <div  class="col-md-3 card">
-                      <div  class=" card-body">
-                          <input class="form-control" type="number" min="1" max="100" value="{{ $item->quantity}}" id="product_{{ $item->id }}">
-                          <div class="py-1"></div>
-                          <a href="#" class="btn btn-warning btn-update-item" data-href="{{ route('cart-update', $item->id)}}" data-id="{{ $item->id }}"
-                          >Aceptar</a>
-                          
-                      </div>
-                      
-                    </div>
-                    <a href="{{ route('cart-delete', $item->id)}}" >
-                      <button type="button" class="close col-md-1" aria-label="Close">
+                  <div class="row">
+                    <div class="col-md-12 card">
+                      <a href="{{ route('cart-delete', $item->id)}}" >
+                      <button type="button" class="close" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
-                    </a>
+                      </a>
+                      <div class="row">
+                        <div class="col-md-4">
+                            <div  class=" text-center card-body">
+                              <img src="{{ asset('images/'.$item -> image) }}" class="img-fluid" width="100%"/>            
+                            </div>
+                        </div>
+                        <div  class="col-md-5">
+                          <div  class="card-body">
+                              <p class="small">{{ $item->name }}</p>
+                              <p class="small">{{ $item->extract}}</p>                                           
+                              <p class="small"><strong style="color: red">S/.{{ number_format($item->price,2) }}</strong> &nbsp <img src="{{ asset('images/icon/paypalicon.png') }}" width="50px" height="20%" class="img-fluid" /></p>
+                          </div>
+                        </div>  
+                        <div  class="col-md-3">
+                          <div class="card-body">
+                                <input class="form-control" type="number" min="1" max="100" value="{{ $item->quantity}}" id="product_{{ $item->id }}">
+                                <div class="py-1"></div>
+                                <a href="#" class="form-control btn btn-warning btn-update-item" data-href="{{ route('cart-update', $item->id)}}" data-id="{{ $item->id }}"
+                                >Aceptar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
                   </div>
-                  </div>
-                    
-                  </div>
-                  <br>
                 </div>
-                <br>
                 @endforeach
                 @else
                   <h3><span class="label label-warning">No hay productos en el carrito :(</span></h3>
