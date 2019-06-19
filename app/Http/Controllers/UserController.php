@@ -73,7 +73,8 @@ class UserController extends Controller
 		
 
 		$orders = Order::Where('user_id' , 'like', "$id")->get();
-		dd($orders);
+		
+		return view('auth.order-list', compact('orders'));
 	}
 }
 

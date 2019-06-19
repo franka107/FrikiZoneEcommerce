@@ -12,6 +12,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}" ></script>
+    <script src="{{ asset('admin/js/main.js') }}" ></script>
+
     <!--<script src="http://code.jquery.com/jquery-1.9.1.min.js" ></script>-->
 
 

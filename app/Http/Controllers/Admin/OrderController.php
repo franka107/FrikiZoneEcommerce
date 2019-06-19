@@ -38,4 +38,13 @@ class OrderController extends Controller
 
         return redirect()->route('order.index')->with('message', $message);
     }
+
+    public function confirmOrder($id)
+    {
+        $order = Order::find($id);
+        $order -> status = 'Entregado';
+        $order->save();
+
+        return redirect()->route('user.orders');
+    }
 }

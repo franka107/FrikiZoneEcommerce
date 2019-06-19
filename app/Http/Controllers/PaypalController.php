@@ -186,6 +186,7 @@ class PaypalController extends BaseController
 		$order->subtotal = $subtotal;
 		$order->shipping = 0;
 		$order->user_id = \Auth::id();
+		$order->status = 'No entregado';
 		$order->save();
 	    
 	    foreach($cart as $item){

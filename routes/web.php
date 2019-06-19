@@ -71,6 +71,7 @@ Route::post('comments','CommentController@store')->middleware('auth');
 
 Route::get('/user/info', 'UserController@edit')->name('EditarInformacion');
 Route::get('/user/order', 'UserController@orders')->name('user.orders');
+Route::PATCH('/user/order/{id}', 'Admin\OrderController@confirmOrder')->name('order.confirm');
 Route::PATCH('/user', 'UserController@update');
 
 Route::get('/pwd/show', 'UserController@editPwd');

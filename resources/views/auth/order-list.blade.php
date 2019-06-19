@@ -1,10 +1,12 @@
-@extends('admin.template')
+
+
+@extends('layouts.app')
 
 @section('content')
     <div class="container text-center">
         <div class="page-header">
             <h1>
-                PEDIDOS
+                MIS ORDENES
             </h1>
         </div>
         
@@ -15,9 +17,8 @@
                     <thead>
                         <tr>
                             <th>Ver Detalle</th>
-                            <th>Eliminar</th>
+                            <th>Confirmar Entrega</th>
                             <th>Fecha</th>
-                            <th>Usuario</th>
                             <th>Subtotal</th>
                             <th>Envio</th>
                             <th>Total</th>
@@ -41,22 +42,21 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <form action="{{route('order.destroy' , $order->id)}}" method="POST">
+                                    <form action="{{route('order.confirm' , $order->id)}}" method="POST">
                                             @csrf
-                                            @method('DELETE')
-                                            <button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
-                                                Eliminar
+                                            @method('PATCH')
+                                            <button onClick="return confirm('¿Estas seguro que deseas confirmar? Luego no podras modicar el estado')" class="btn btn-warning">
+                                                Confirmar
                                             </button>
                                     </form>
                                 </td>
                                 <td>{{ $order->created_at }}</td>
-                                <td>{{ $order->user->name . " " . $order->user->lastname  }}</td>
                                 <!--<td>{ $order->user->name . " " . $order->user->lastname }}</td>-->
                                
                                 <td>S/.{{ number_format($order->subtotal,2) }}</td>
                                 <td>S/.{{ number_format($order->shipping,2) }}</td>
                                 <td>S/.{{ number_format($order->subtotal + $order->shipping,2) }}</td>
-                                <td>{{ $order->status }}</td>
+                                <th>{{ $order->status }}</th>
                             </tr>
 
                             <!--foreach ($order->order_items as $order_item)
