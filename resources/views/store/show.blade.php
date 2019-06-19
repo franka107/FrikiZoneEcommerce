@@ -99,7 +99,7 @@
                     <div class="container bg-dark">
                       <div class="row">
                         <div class="col-md-5">
-                          <img class="img-fluid" src="{{ asset('images/aqua.jpg') }}">
+                          <img class="img-fluid" src="{{ asset('images/icon/aqua.jpg') }}">
                         </div>
                         <div class="col-md-7 text-white">
                           <h4 class="">Este elemento fue agregado exitosamente al carrito</h4>

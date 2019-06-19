@@ -100,7 +100,7 @@
                     <div class="container bg-dark">
                       <div class="row">
                         <div class="col-md-5">
-                          <img class="img-fluid" src="{{ asset('images/aqua.jpg') }}">
+                          <img class="img-fluid" src="{{ asset('images/icon/aqua.jpg') }}">
                         </div>
                         <div class="col-md-7 text-white">
                           <h4 class="">Este elemento fue agregado exitosamente al carrito</h4>
@@ -113,7 +113,7 @@
                         <div class="col-md-6">
                          <a href="{{ route('cart-show')}}"> <button class="btn btn-success">Ir al carrito</button></a>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 ">
                           <a href="{{ route('home') }}"><button class="btn btn-success">Ir a la Pagina principal</button></a>
                         </div>
                       </div>
