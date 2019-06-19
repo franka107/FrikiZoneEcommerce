@@ -50,9 +50,9 @@
                     </div>
                   </div>
                   <br>
-                  <a href="{{ route('cart-add-ready', $product-> id ) }}"><button class="btn btn-primary btn-block"  data-toggle="modal" data-target="#modal1" >AGREGAR AL CARRITO</button></a>
+                  <a href="#"><button class="btn btn-primary btn-block"  data-toggle="modal" data-target="#modal1">AGREGAR AL CARRITO</button></a>
                   <br>
-                  <a href="{{ route('cart-add', $product -> id) }}"><button class="btn btn-success btn-block">COMPRAR</button></a>
+                  <a href=""><button class="btn btn-success btn-block">COMPRAR</button></a>
                 </div>
               </div>
           </div>
@@ -90,6 +90,7 @@
 
           <!---------------------------- Modal --------------------------------------->
 
+        
           <div class="container">
             <div class="modal" tabindex="-1" id="modal1">
               <div class="modal-dialog bg-dark">
@@ -122,5 +123,11 @@
               </div>
             </div>
            </div>
+
+           <script>  
+              $(document).ready(function(){
+                $('#modal1').modal('show');
+              });
+           </script>
                 
 @endsection
