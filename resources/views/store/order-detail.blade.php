@@ -16,14 +16,13 @@
                         <div class="container">
                           <table class="table table-striped table-hover table-bordered">
                             <tr><td>Nombre:</td><td>{{ Auth::user()->name . " " . Auth::user()->lastname }}</td></tr>
-                            <tr><td>Usuario:</td><td>{{ Auth::user()->user }}</td></tr>
                             <tr><td>Correo:</td><td>{{ Auth::user()->email }}</td></tr>
                             <tr><td>Dirección:</td><td>{{ Auth::user()->address }}</td></tr>
                           </table>
                         </div> 
                       </div>
                       <div class="border-bottom">
-                        <h4>Productos que se wa comprar</h4>
+                        <h4>Productos que se va comprar</h4>
                       </div>
                       <br>
                       @foreach($cart as $item)
@@ -65,7 +64,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                 <label class="form-check-label" for="defaultCheck1">ENVIO GRATUITO</label><br>
                                 <span>* Demora 1 mes o mas y esta para recoger en oficina postal</span><br><br>
-                                <span class="small text-justify">* Actualmente solo siponemos de envio grauito </span>
+                                <span class="small text-justify">* Actualmente solo siponemos de envio gratuito </span>
                               </div>
                               <br>
                             </div>
@@ -106,7 +105,7 @@
                   </div>
                 </div>
               </div>
-              <a href="{{ route('home') }}">Regresar</a>
+              <a class="btn btn-primary "href="{{ route('home') }}">Regresar</a>
 
 
 @endsection
