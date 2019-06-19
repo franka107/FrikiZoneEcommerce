@@ -2,6 +2,7 @@
 
 @section('content')
 <br>
+<br>
 <div style="margin-top: 3%;" class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -90,4 +91,5 @@
         </div>
     </div>
 </div>
+<br>
 @endsection
