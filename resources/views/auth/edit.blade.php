@@ -10,7 +10,7 @@
 		<div class="col-md-3 text-center">
 			<div class="round text-center card shadow-lg">
 				<div class=" text-center card-body">
-			  		<img src="{{ asset('images/perfil.png') }}" class="img-fluid" />
+			  		<img src="{{ asset('images/icon/perfil.png') }}" class="img-fluid" />
 			  	</div>
 			</div>
 			<br>
@@ -58,5 +58,5 @@
 	</div>
 	
 </div>
-
+<br><br><br><br>
 @endsection

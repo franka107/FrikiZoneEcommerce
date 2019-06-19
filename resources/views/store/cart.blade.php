@@ -86,7 +86,7 @@
                       </div>
                       <br><br><br>
                       <div class="col-md-12">
-                        <img src="{{ asset('images/saitama.jpg') }}"  class="img-fluid" />
+                        <img src="{{ asset('images/icon/saitama.jpg') }}"  class="img-fluid" />
                       </div>
                     </div>
                   </div>
