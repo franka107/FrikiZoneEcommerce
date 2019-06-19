@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Order;
 
 class UserController extends Controller
 {
@@ -65,7 +66,15 @@ class UserController extends Controller
 
         return redirect()->action('StoreController@index');
 
-    }
+	}
+	
+	public function orders(){
+		$id =  Auth::user()->id;
+		
+
+		$orders = Order::Where('user_id' , 'like', "$id")->get();
+		dd($orders);
+	}
 }
 
 

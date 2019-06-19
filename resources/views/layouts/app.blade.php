@@ -64,7 +64,7 @@
             <ul class="navbar-nav">
               @guest
                 <li class="p-2 " >
-                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/icon/dolar.png') }}">Cambio:$3.24</a>
+                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/icon/dolar.png') }}">Cambio:$3.34</a>
                 </li>
 
                 <li class="p-2 " >
@@ -88,7 +88,7 @@
                 @endif
               @endif
                  
-                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/icon/dolar.png') }}"> Cambio:$3.24</a>
+                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/icon/dolar.png') }}"> Cambio:$3.34</a>
                   </li>
 
                   <li class="nav-item dropdown">
@@ -106,13 +106,17 @@
                              
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('EditarInformacion') }}">
-                                         <img class="img-fluid" src="{{ asset('images/icon/editN.png') }}">{{ __(' EditProfile') }}
+                                         <!--<img class="img-fluid" src="{ asset('images/icon/editN.png') }}">-->{{ __('Editar Perfil') }}
                                     </a>
+
+                                    <a class="dropdown-item" href="{{route('user.orders')}}">
+                                        <!--<img class="img-fluid" src="{ asset('images/icon/order.jpg') }}" width="25px">-->{{ __('Mis pedidos') }}
+                                   </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        <img class="img-fluid" src="{{ asset('images/icon/logoutN.png') }}">{{ __(' Logout') }}
+                                        <!--<img class="img-fluid" src="{ asset('images/icon/logoutN.png') }}">-->{{ __(' Salir') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
