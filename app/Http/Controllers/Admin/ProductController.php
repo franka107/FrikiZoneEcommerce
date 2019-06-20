@@ -31,8 +31,8 @@ class ProductController extends Controller
         
         $request->validate([
             'name' => 'required|max:40|unique:products',
-            'description' => 'required|max:255',
-            'extract' => 'required|max:60',
+            'description' => 'required|max:500',
+            'extract' => 'required|max:70',
             'price' => 'required|numeric',
             'image'   => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'category' => 'required',
@@ -83,8 +83,8 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' =>  $request->get('name') ? 'required|unique:products|max:40' : '',
-            'description' => $request->get('description') ? 'required|max:255' : '',
-            'extract' => $request->get('extract') ? 'required|max:60' : '',
+            'description' => $request->get('description') ? 'required|max:500' : '',
+            'extract' => $request->get('extract') ? 'required|max:70' : '',
             'price' => $request->get('price') ? 'required|numeric' : '',
             'image'   => $request->file('image') ? 'required|image|mimes:jpeg,png,jpg|max:2048' : '',
             'category' => 'required',

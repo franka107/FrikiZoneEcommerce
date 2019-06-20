@@ -58,12 +58,12 @@
                         <br>
                         <div style="padding-bottom: 4%;" class="row border-bottom">
                           <h6 class="col-md-5">Subtotal</h6>
-                          <h6 class="col-md-6 text-right">S/. 150.00</h6>
+                          <h6 class="col-md-6 text-right">S/.{{ number_format($total,2) }}</h6>
                         </div>
                         <br>
                         <div style="padding-bottom: 4%;" class="row border-bottom">
                           <h6 class="col-md-5">Envio</h6>
-                          <h6 class="col-md-6 text-right">S/. 130.00</h6>
+                          <h6 class="col-md-6 text-right">S/. 0.00</h6>
                         </div>
                         <br>
                         <div style="padding-bottom: 4%;" class="row border-bottom">

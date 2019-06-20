@@ -52,10 +52,10 @@
                   @method('GET')
                   <div class="row">
                     <div class="row col-10" >
-                        <input name="name" class="form-control mr-sm-2" type="search" placeholder="Search">
+                        <input name="name" class="form-control mr-sm-2" type="search" placeholder="Busca lo que te guste">
                     </div>
                     <div class="row col-2">
-                        <button class="btn btn-outline-primary   " type="submit">Search</button>
+                        <button class="btn btn-outline-primary   " type="submit">Buscar</button>
                     </div>
                       
                   </div>
@@ -77,7 +77,7 @@
 
                 @if (Route::has('register'))
                   <li class="p-2 " >
-                    <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('storage/images/icon/login.png') }}" width="25px">{{ __(' Register') }}</a>
+                    <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('storage/images/icon/login.png') }}" width="25px">{{ __(' Registrate') }}</a>
                   </li>
 
                 @endif
@@ -179,10 +179,10 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img class="img-fluid" src="{{ asset('storage/images/Fundadores/Franka.jpg') }}" alt="Segundo Slide">
+                        <img class="img-fluid" src="{{ asset('storage/images/Fundadores/Franka.jpeg') }}" alt="Segundo Slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3 style="background-color:#161616; opacity:.5">Franka</h3>
-                            <p>Modo trapito</p>
+                            <h3 style="background-color:#161616; opacity:.5">Frank</h3>
+                            <p>El macho</p>
                         </div>
                     </div>
 
@@ -211,10 +211,10 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/Fundadores/Brucce.jpg') }}" alt="Sexto Slide">
+                        <img class="img-fluid" src="{{ asset('storage/images/Fundadores/Brucce.jpeg') }}" alt="Sexto Slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3 style="background-color:#161616; opacity:.5">El leshero</h3>
-                            <p>No found image</p>
+                            <h3 style="background-color:#161616; opacity:.5">Brucce Lee</h3>
+                            <p>Tengo miedo</p>
                         </div>
                     </div>
                 </div>

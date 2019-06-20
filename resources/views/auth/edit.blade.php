@@ -42,10 +42,14 @@
 			<br>
 			
 			<div class="row">
-				<div class="col-6">
+				<div class="col">
 					<label for="email">Email</label>
 					<input type="email" class="form-control" name="email" id="email" value="{{Auth::user()->email}}" required autocomplete="email" >
 				</div>
+                                <div class="col">
+                                      <label for="address">Direccion</label>
+                                      <input type="address" class="form-control" name="address" id="address" value="{{Auth::user()->address}}" required autocomplete="address">
+                                </div>
 			</div>
 			<br>
 			<div>

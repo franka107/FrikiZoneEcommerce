@@ -22,18 +22,20 @@ class UserController extends Controller
     		'name' => ['required', 'string', 'max:255'],
     		'lastname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
+            'address' => ['required', 'max:255'],
 		]);
 		$id = Auth::user()->id; 
 		$user = User::find($id);
 
 		if ($request->file('image')) {
-            $imageName = basename($request->file('image')->store('users/'. \Auth::id() , 'public'));
+            $imageName = basename($request->file('image')->store('images/users/'. \Auth::id() , 'public'));
 			$user->image = $imageName;
 		} 
 				    	   	
     	$user->name = $request->get('name');
     	$user->lastname = $request->get('lastname');
 		$user->email = $request->get('email');
+                $user->address = $request->get('address');
 		
     	$user->save();
 
