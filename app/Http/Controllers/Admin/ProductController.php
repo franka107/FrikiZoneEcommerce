@@ -38,8 +38,11 @@ class ProductController extends Controller
             'category' => 'required',
         ]);
 
-        $img = $request->file('image');
-        $imageName = time().$img->getClientOriginalName();
+       // $img = $request->file('image');
+       // $imageName = time().$img->getClientOriginalName();
+
+        $imageName = basename($request->file('img')->store('posts/products', 'public'));
+
 
         $product = new Product();
         $product->category_id = $request->get('category'); 
@@ -50,7 +53,7 @@ class ProductController extends Controller
         $product->visible = $request->has('visible') ? 1 : 0;
         $product->image = $imageName;
 
-        $request->image->move(public_path('images'), $imageName);
+      //  $request->image->move(public_path('images'), $imageName);
 
         $product->save();
 
