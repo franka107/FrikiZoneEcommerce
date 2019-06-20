@@ -32,7 +32,7 @@
                           <div class="container">
                             <div class="row">
                               <div  class="col-4">
-                                <img src="{{ asset('images/'.$item -> image) }}"class="img-fluid" />            
+                                <img src="{{ asset('storage/images/products'.$item -> image) }}"class="img-fluid" />            
                               </div>
                               <div class="col-8">
                                 <p class="small">Nombre: {{ $item->name }}</p>
@@ -77,7 +77,7 @@
                               <h4>METODO DE PAGO</h4>
                             </div>
                             <br>
-                            <img  src="{{ asset('images/icon/paypalicon.png') }}"  class="img-fluid" />            
+                            <img  src="{{ asset('storage/images/icon/paypalicon.png') }}"  class="img-fluid" />            
                             <label>El unico metodo de pago disponible por ahora es Paypal</label><br>
                             <span class="small">* DISCULPANOS ONI-CHAN</span>
                           </div>

@@ -29,7 +29,7 @@
     <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>-->
 
-    <link rel="icon" type="image/png" href="{{ asset('images/icon/totoro.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/icon/totoro.png') }}" />
 
 </head>
 <body class="">
@@ -37,7 +37,7 @@
       <div class="container">
   
           
-          <a class="navbar-brand" href="{{ url('/') }}"><img class="img-fluid" src="{{ asset('images/icon/emblema.png') }}"></a>
+          <a class="navbar-brand" href="{{ url('/') }}"><img class="img-fluid" src="{{ asset('storage/images/icon/emblema.png') }}"></a>
   
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"><span class="navbar-toggler-icon"></span></button>
@@ -66,31 +66,31 @@
             <ul class="navbar-nav">
               @guest
                 <li class="p-2 " >
-                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('images/icon/dolar.png') }}">Cambio:$3.34</a>
+                  <a class="nav-link" href=""><img class="img-fluid"  src="{{ asset('storage/images/icon/dolar.png') }}">Cambio:$3.34</a>
                 </li>
 
                 <li class="p-2 " >
-                  <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/icon/user.png') }}">{{ __(' Login') }}</a>
+                  <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('storage/images/icon/user.png') }}">{{ __(' Login') }}</a>
                 </li>
 
                 @if (Route::has('register'))
                   <li class="p-2 " >
-                    <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/icon/login.png') }}" width="25px">{{ __(' Register') }}</a>
+                    <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('storage/images/icon/login.png') }}" width="25px">{{ __(' Register') }}</a>
                   </li>
 
                 @endif
-                  <li class="p-2 " ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/icon/carrito.png') }}">{{ __(' Carrito') }}</a></li>
+                  <li class="p-2 " ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('storage/images/icon/carrito.png') }}">{{ __(' Carrito') }}</a></li>
               @else
               @if ( \Auth::check())
                 @if ( \Auth::user()->type=='admin')
                   <li class="nav-item" >
-                      <a class="nav-link" href="{{ url('/admin/home') }}"><img class="img-fluid" src="{{ asset('images/icon/dashboard.png') }}" width="30px">{{ __(' Dashboard') }}</a>
+                      <a class="nav-link" href="{{ url('/admin/home') }}"><img class="img-fluid" src="{{ asset('storage/images/icon/dashboard.png') }}" width="30px">{{ __(' Dashboard') }}</a>
                    
                   </li>
                 @endif
               @endif
                  
-                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/icon/dolar.png') }}"> Cambio:$3.34</a>
+                    <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('storage/images/icon/dolar.png') }}"> Cambio:$3.34</a>
                   </li>
 
                   <li class="nav-item dropdown">
@@ -98,11 +98,11 @@
                                 
                                 @if ( Auth::user()->image)
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  <img class="img-fluid" width="30px" style="border-radius: 15px" src="{{ asset('images/'.Auth::user()->image) }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                  <img class="img-fluid" width="30px" style="border-radius: 15px" src="{{ asset('storage/images/'. Auth::user->id . '/' .Auth::user()->image) }}">{{ Auth::user()->name }} <span class="caret"></span></a>
                                 </a>
                                 @else
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  <img class="img-fluid" src="{{ asset('images/icon/user.png') }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                  <img class="img-fluid" src="{{ asset('storage/images/icon/user.png') }}">{{ Auth::user()->name }} <span class="caret"></span></a>
                                 </a>
                                 @endif
                              
@@ -130,7 +130,7 @@
                   </li>
 
                   
-                  <li class="nav-item"><a class="nav-link" href="{{ route('cart-show')}}"><img class="img-fluid" src="{{ asset('images/icon/carrito.png') }}">{{ __(' Carrito') }}</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ route('cart-show')}}"><img class="img-fluid" src="{{ asset('storage/images/icon/carrito.png') }}">{{ __(' Carrito') }}</a></li>
             </ul>
               @endguest
           </div>
@@ -169,7 +169,7 @@
                 <div class="carousel-inner">
 
                     <div class="carousel-item active">
-                        <img class="img-fluid" src="{{ asset('images/Fundadores/George.jpg') }}" alt="Primer Slide">
+                        <img class="img-fluid" src="{{ asset('storage/images/Fundadores/George.jpg') }}" alt="Primer Slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 style="background-color:#161616; opacity:.5">George Extasis</h3>
                             <p>Castro a su gato</p>
@@ -177,7 +177,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/Fundadores/Franka.jpg') }}" alt="Segundo Slide">
+                        <img class="img-fluid" src="{{ asset('storage/images/Fundadores/Franka.jpg') }}" alt="Segundo Slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 style="background-color:#161616; opacity:.5">Franka</h3>
                             <p>Modo trapito</p>
@@ -185,7 +185,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img class="img-fluid"  src="{{ asset('images/Fundadores/Miranda.jpg') }}" alt="Tercer Slide">
+                        <img class="img-fluid"  src="{{ asset('storage/images/Fundadores/Miranda.jpg') }}" alt="Tercer Slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 style="background-color:#161616; opacity:.5">Miranda dark</h3>
                             <p>El inevitable</p>
@@ -193,7 +193,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/Fundadores/Jose2.jpg') }}" alt="Cuarto Slide">
+                        <img class="img-fluid" src="{{ asset('storage/images/Fundadores/Jose2.jpg') }}" alt="Cuarto Slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 style="background-color:#161616; opacity:.5">Lord Bython</h3>
                             <p>El gamberro</p>
@@ -201,10 +201,10 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img class="img-fluid" src="{{ asset('images/Fundadores/Emerson2.jpg') }}" alt="Quinto Slide">
+                        <img class="img-fluid" src="{{ asset('storage/images/Fundadores/Emerson2.jpg') }}" alt="Quinto Slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 style="background-color:#161616; opacity:.5">Emerson Wick</h3>
-                            <p>No se masturben</p>
+                            <p>Soy el exito</p>
                         </div>
                     </div>
 
@@ -261,11 +261,11 @@
           </ul>
           <h5 class="text-warning">Redes Sociales</h5><br>
             <ul>
-              <img src="/images/icon/face.png" style="height:40px;width:40px;">
-              <img src="/images/icon/insta.png" style="height:40px;width:40px;">
-              <img src="/images/icon/goog.png" style="height:40px;width:40px;">
-              <img src="/images/icon/pin.png" style="height:40px;width:40px;">
-              <img src="/images/icon/twi.png" style="height:40px;width:40px;">
+              <img src="{{asset('storage/images/icon/face.png')}}" style="height:40px;width:40px;">
+              <img src="{{asset('storage/images/icon/insta.png')}}" style="height:40px;width:40px;">
+              <img src="{{asset('storage/images/icon/goog.png')}}" style="height:40px;width:40px;">
+              <img src="{{asset('storage/images/icon/pin.png')}}" style="height:40px;width:40px;">
+              <img src="{{asset('storage/images/icon/twi.png')}}" style="height:40px;width:40px;">
             </ul>
         </div>
       </div>
