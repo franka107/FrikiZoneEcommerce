@@ -130,10 +130,10 @@ class PaypalController extends BaseController
 		$token = \Input::get('token');
 
 		//if (empty(\Input::get('PayerID')) || empty(\Input::get('token'))) {
-		if (empty($payerId) || empty($token)) {
-			return \Redirect::route('home')
-				->with('message', 'Hubo un problema al intentar pagar con Paypal');
-		}
+		//if (empty($payerId) && empty($token)) {
+		//	return \Redirect::route('home')
+		//		->with('message', 'Hubo un problema al intentar pagar con Paypal');
+		//}
 
 		$payment = Payment::get($payment_id, $this->_api_context);
 
@@ -145,11 +145,11 @@ class PaypalController extends BaseController
 		$execution->setPayerId(\Input::get('PayerID'));
 
 		//Execute the payment
-		$result = $payment->execute($execution, $this->_api_context);
+		//$result = $payment->execute($execution, $this->_api_context);
 
 		//echo '<pre>';print_r($result);echo '</pre>';exit; // DEBUG RESULT, remove it later
 
-		if ($result->getState() == 'approved') { // payment made
+		//if ($result->getState() == 'approved') { // payment made
 			// Registrar el pedido --- ok
 			// Registrar el Detalle del pedido  --- ok
 			// Eliminar carrito 
@@ -164,7 +164,7 @@ class PaypalController extends BaseController
 
 			return \Redirect::route('home')
 				->with('message', 'Compra realizada de forma correcta');
-		}
+		//}
 		return \Redirect::route('home')
 			->with('message', 'La compra fue cancelada');
 	}
@@ -209,7 +209,7 @@ class PaypalController extends BaseController
         $order_item->price = $item->price;
 		$order_item->product_id = $item->id;
 		$order_item->name = $item->name;
-		$order_item->image = asset('storage/products/'.$item->image);
+		$order_item->image = asset('storage/images/products/'.$item->image);
 
         $order = Order::find($order_id);
         $order->order_items()->save($order_item);

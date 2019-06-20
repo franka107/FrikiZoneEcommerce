@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
               
                     @foreach ( $products as $product)
-                        @if ( $product->visible == 1)
+                        
                         <div class="col-md-3 py-3">
                                  <div class="card">
                                           <a href="{{ route('product-detail', $product -> id) }}"><img src="{{ asset('storage/images/products/'.$product -> image) }}"  class="card-img-top" height="200px" /></a>
@@ -19,9 +19,9 @@
                                  </div>
                               </div>
                      
-                        @else
+                        
                            
-                        @endif
+                        
                     @endforeach
                     </div>
     </div>

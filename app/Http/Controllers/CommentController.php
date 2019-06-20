@@ -10,7 +10,7 @@ use App\Comment;
 class CommentController extends Controller
 {
 
-    public function store(Request $request,Product $product)
+    public function store(Request $request, $id)
     {
         $request->validate([
             'content' => 'required:max:250',
@@ -19,7 +19,7 @@ class CommentController extends Controller
         $comment->user_id = Auth::id();
         $comment->content = $request->get('content');
         
-        $product =Product::find($request->get('product_id'));
+	$product =Product::find($id);
         $product->comments()->save($comment);
 
         return redirect()->route('product-detail', $product->id);

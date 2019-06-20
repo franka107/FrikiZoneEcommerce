@@ -32,7 +32,7 @@
                           <div class="container">
                             <div class="row">
                               <div  class="col-4">
-                                <img src="{{ asset('storage/images/products'.$item -> image) }}"class="img-fluid" />            
+                                <img src="{{ asset('storage/images/products/'.$item -> image) }}"class="img-fluid" />            
                               </div>
                               <div class="col-8">
                                 <p class="small">Nombre: {{ $item->name }}</p>
