@@ -41,7 +41,7 @@ class ProductController extends Controller
        // $img = $request->file('image');
        // $imageName = time().$img->getClientOriginalName();
 
-        $imageName = basename($request->file('img')->store('posts/products', 'public'));
+        $imageName = basename($request->file('image')->store('posts/products/', 'public'));
 
 
         $product = new Product();
