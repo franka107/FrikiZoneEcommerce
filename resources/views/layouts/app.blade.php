@@ -47,7 +47,9 @@
             <ul class="navbar-nav mr-auto col-md-5 mr-auto">
 
 
-                <form class="col-12" action="{{ action('StoreController@search') }}" method="get" >
+                <form class="col-12" action="{{ action('StoreController@search') }}" method="post" >
+                  @csrf
+                  @method('GET')
                   <div class="row">
                     <div class="row col-10" >
                         <input name="name" class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -98,7 +100,7 @@
                                 
                                 @if ( Auth::user()->image)
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                  <img class="img-fluid" width="30px" style="border-radius: 15px" src="{{ asset('storage/images/'. Auth::user->id . '/' .Auth::user()->image) }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                  <img class="img-fluid" width="30px" style="border-radius: 15px" src="{{ asset('storage/images/users/'. Auth::user()->id . '/' .Auth::user()->image) }}">{{ Auth::user()->name }} <span class="caret"></span></a>
                                 </a>
                                 @else
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
