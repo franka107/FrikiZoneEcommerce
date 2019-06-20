@@ -35,18 +35,21 @@ class CartController extends Controller
         $cart[$product->id] = $product;
         \Session::put('cart', $cart);
 
+
         return redirect()->route('cart-show');
     }
 
     public function addReady($id)
     {
-        $product = Product::find($id);
+        $productReady = Product::find($id);
         $cart = \Session::get('cart');
-        $product->quantity =1;
-        $cart[$product->id] = $product;
+        $productReady->quantity =1;
+        $cart[$productReady->id] = $productReady;
         \Session::put('cart', $cart);
+        $product = Product::find($id);
 
-        return view('store.showmodal', compact('product'));
+        //return view('store.showmodal', compact('product'));
+          return view('store.showmodal', compact('product'));
     }
     // Delete Item
 

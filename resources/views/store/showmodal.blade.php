@@ -61,7 +61,7 @@
       <br>
           <div style="max-width: 82%;" class="container">
             <h6 class="display-4">Comentarios</h6>
-            <form action="{{ action('CommentController@store', ['product_id' => $product->id]) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ action('CommentController@store', $product->id) }}" method="POST" enctype="multipart/form-data">
               @csrf
                 <div>
                   <label for="content">{{ __('Añadir comentario') }}</label>

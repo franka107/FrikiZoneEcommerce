@@ -15,26 +15,22 @@
              <div class="carousel-inner">
 
                  <div class="carousel-item active">
-                     <img class="d-block w-100" src="{{ asset('storage/images/1.jpg') }}" alt="Primer Slide">
+                     <img class="d-block w-100" src="{{ asset('storage/images/banners/banner1.jpg') }}" alt="Primer Slide">
                      <div class="carousel-caption d-none d-md-block">
-                         <h3>Primer Slide</h3>
-                         <p>Text Ejemplo Primer Slide</p>
+                         
+                         
                      </div>
                  </div>
 
                  <div class="carousel-item">
-                     <img class="d-block w-100" src="{{ asset('storage/images/2.jpg') }}" alt="Segundo Slide">
+                     <img class="d-block w-100" src="{{ asset('storage/images/banners/banner2.jpg') }}" alt="Segundo Slide">
                      <div class="carousel-caption d-none d-md-block">
-                         <h3>Segundo Slide</h3>
-                         <p>Text Ejemplo Segundo Slide</p>
                      </div>
                  </div>
 
                  <div class="carousel-item">
-                     <img class="d-block w-100" src="{{ asset('storage/images/3.jpg') }}" alt="Tercer Slide">
+                     <img class="d-block w-100" src="{{ asset('storage/images/banners/banner3.jpg') }}" alt="Tercer Slide">
                      <div class="carousel-caption d-none d-md-block">
-                         <h3>Tercer Slide</h3>
-                         <p>Text Ejemplo Tercer Slide</p>
                      </div>
                  </div>
 
