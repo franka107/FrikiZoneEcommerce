@@ -13,14 +13,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('admin/js/main.js') }}" ></script>
-  
+
     <script src="http://code.jquery.com/jquery-1.9.1.min.js" ></script>
 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -40,18 +40,18 @@
               </button>
                 <ul class="navbar-nav">
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/cat nav.png') }}">{{ __(' Categorias') }}</a>
+                  <a class="nav-link" href=""><img class="img-fluid" src="{{ asset('images/icon/cat nav.png') }}">{{ __(' Categorias') }}</a>
                 </li>
 
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/car nav.png') }}">{{ __(' Productos') }}</a>
+                  <a class="nav-link" href="{{ route('login') }}"><img class="img-fluid" src="{{ asset('images/icon/car nav.png') }}">{{ __(' Productos') }}</a>
                 </li>
                 <li class="p-2 text-center" >
-                  <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/paypal nav.png') }}">{{ __(' Pedidos') }}</a>
+                  <a class="nav-link" href="{{ route('register') }}"><img class="img-fluid" src="{{ asset('images/icon/paypal nav.png') }}">{{ __(' Pedidos') }}</a>
                 </li>
-                <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
+                <li class="p-2 text-center" ><a class="nav-link" href="{{ route('cart-show') }}"><img  class="img-fluid" src="{{ asset('images/icon/users nav.png') }}">{{ __(' Usuarios') }}</a></li>
                 <li class="p-2 text-center">
-                  <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/logout.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
+                  <a id="navbarDropdown" class="nav-link font-weight-normal" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="img-fluid" src="{{ asset('images/icon/login.png') }}">{{ __(' Logout') }}<span class="caret"></span></a>
                 </li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -65,7 +65,7 @@
 
         @if (\Session::has('message'))
           @include('admin.partials.message')
-        @endif  
+        @endif
 
         @yield('content')
     </main>
@@ -77,7 +77,7 @@
       </div>
     </nav>
   </footer>
-  
+
 </body>
 
 </html>
