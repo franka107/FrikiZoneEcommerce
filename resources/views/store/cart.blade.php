@@ -21,14 +21,14 @@
                       <div class="row">
                         <div class="col-md-4">
                             <div  class=" text-center card-body">
-                              <img src="{{ asset('images/'.$item -> image) }}" class="img-fluid" width="100%"/>            
+                              <img src="{{ asset('storage/images/products/'.$item -> image) }}" class="img-fluid" width="100%"/>            
                             </div>
                         </div>
                         <div  class="col-md-5">
                           <div  class="card-body">
                               <p class="small">{{ $item->name }}</p>
                               <p class="small">{{ $item->extract}}</p>                                           
-                              <p class="small"><strong style="color: red">S/.{{ number_format($item->price,2) }}</strong> &nbsp <img src="{{ asset('images/icon/paypalicon.png') }}" width="50px" height="20%" class="img-fluid" /></p>
+                              <p class="small"><strong style="color: red">S/.{{ number_format($item->price,2) }}</strong> &nbsp <img src="{{ asset('storage/images/icon/paypalicon.png') }}" width="50px" height="20%" class="img-fluid" /></p>
                           </div>
                         </div>  
                         <div  class="col-md-3">
@@ -79,7 +79,7 @@
                       </div>
                       <br><br><br>
                       <div class="col-md-12">
-                        <img src="{{ asset('images/icon/saitama.jpg') }}"  class="img-fluid" />
+                        <img src="{{ asset('storage/images/icon/saitama.jpg') }}"  class="img-fluid" />
                       </div>
                     </div>
                   </div>

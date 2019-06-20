@@ -11,10 +11,10 @@
 			<div class="round text-center card shadow-lg">
 				<div class=" text-center card-body">
 					@if ( Auth::user()->image )
-						<img src="{{ asset('images/'. Auth::user()->image) }}" class="img-fluid" />
+						<img src="{{ asset('storage/images/users/'. \Auth::id() . '/' . Auth::user()->image) }}" class="img-fluid" />
 
 					@else
-						<img src="{{ asset('images/icon/perfil.png') }}" class="img-fluid" />
+						<img src="{{ asset('storage/images/icon/perfil.png') }}" class="img-fluid" />
 	
 					@endif
 			  	</div>
