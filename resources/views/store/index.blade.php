@@ -57,14 +57,16 @@
 
    <div class="container">
       <br>
+    @foreach ($categories as $category)
       <div class="border-bottom">
-         <h4 class="font-weight-light">Nuevos libros llegan a nuestras bibliotecas <a class="small" style="color: orange" href="">Ver mas</a></h4>
+         <h4 class="font-weight-light">{{ $category->name }}</h4>
       </div>
       <br>
       <div class="row justify-content-center">
-      @foreach ( $products as $product)
-        @if ( $product->visible == 1)
-        <div class="col-md-3 py-3">
+        @foreach ($category->products as $product)
+
+          @if ( $product->visible == 1)
+          <div class="col-md-3 py-3">
                 <div class="card">
                         <a href="{{ route('product-detail', $product -> id) }}"><img src="{{ asset('storage/images/products/'.$product -> image) }}"  class="card-img-top" height="200px" /></a>
     
@@ -77,11 +79,11 @@
                 </div>
              </div>
     
-        @else
+            @else
             
-        @endif
-         
-      @endforeach
+            @endif
+        @endforeach     
+    @endforeach
       </div>
    </div>
 @endsection
