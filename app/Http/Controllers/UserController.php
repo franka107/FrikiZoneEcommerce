@@ -27,10 +27,8 @@ class UserController extends Controller
 		$user = User::find($id);
 
 		if ($request->file('image')) {
-			$img = $request->file('image');
-			$imageName = time().$img->getClientOriginalName();
+            $imageName = basename($request->file('image')->store('users/'. \Auth::id() , 'public'));
 			$user->image = $imageName;
-			$request->image->move(public_path('images'), $imageName);
 		} 
 				    	   	
     	$user->name = $request->get('name');

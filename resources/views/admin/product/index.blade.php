@@ -46,7 +46,7 @@
                                     </form>
         							
                                 </td>
-                                <td><img src="{{ asset('images/'.$product->image) }}" width="40"></td>
+                                <td><img src="{{ asset('storage/images/products/'.$product->image) }}" width="40"></td>
                                 <td>{{ $product->name }}</td>
                                 @if ($product->category)
                                     <td>{{ $product->category->name }}</td>

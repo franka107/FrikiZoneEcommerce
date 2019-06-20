@@ -209,7 +209,7 @@ class PaypalController extends BaseController
         $order_item->price = $item->price;
 		$order_item->product_id = $item->id;
 		$order_item->name = $item->name;
-		$order_item->image = asset('images/'.$item->image);
+		$order_item->image = asset('storage/products/'.$item->image);
 
         $order = Order::find($order_id);
         $order->order_items()->save($order_item);

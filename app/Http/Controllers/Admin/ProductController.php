@@ -41,7 +41,7 @@ class ProductController extends Controller
        // $img = $request->file('image');
        // $imageName = time().$img->getClientOriginalName();
 
-        $imageName = basename($request->file('image')->store('posts/products/', 'public'));
+        $imageName = basename($request->file('image')->store('images/products/', 'public'));
 
 
         $product = new Product();
@@ -93,10 +93,9 @@ class ProductController extends Controller
         $product =  Product::find($id);
 
             if ($request->file('image')) {
-                $img = $request->file('image');
-                $imageName = time().$img->getClientOriginalName();
+                $imageName = basename($request->file('image')->store('images/products/', 'public'));
                 $product->image = $imageName;
-                $request->image->move(public_path('images'), $imageName);
+      
             }
       
 

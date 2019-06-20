@@ -50,9 +50,9 @@
                                 <td>{{ $user->type }}</td>
                                 <td>{{ $user->active == 1 ? "Si" : "No" }}</td>
                                 @if ( $user->image )
-                                    <td><img src="{{ asset('images/'. $user->image) }}" alt="" width="40px"></td>
+                                    <td><img src="{{ asset('storage/images/users/'. $user->image) }}" alt="" width="40px"></td>
                                 @else
-                                    <td><img src="{{ asset('images/icon/perfil.png') }}" alt="" width="40px"></td>
+                                    <td><img src="{{ asset('storage/images/icon/perfil.png') }}" alt="" width="40px"></td>
                                 @endif
                             </tr>
                         @endforeach
